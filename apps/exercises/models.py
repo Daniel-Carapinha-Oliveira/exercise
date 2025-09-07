@@ -10,7 +10,7 @@ class Muscle(models.Model):
 
     # ForeignKeys
     body_part = models.ForeignKey(
-        'workouts.BodyPart',
+        'apps.exercises.BodyPart',
         on_delete=models.PROTECT,
         related_name='muscles',
         verbose_name='parte do corpo',

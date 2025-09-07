@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # internal apps
     'apps.core',
-    'apps.workouts',
+    'apps.exercises',
 ]
 
 MIDDLEWARE = [
