@@ -23,7 +23,7 @@ class Muscle(models.Model):
         verbose_name_plural = 'muscles'
 
     def __str__(self):
-        return f"{self.name} - {self.body_part.name}"
+        return self.name
 
 
 class BodyPart(models.Model):
