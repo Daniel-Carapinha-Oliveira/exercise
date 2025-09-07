@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def exercises(request):
-    return render(request, "exercises.html")
+    return render(request, "exercises.html", {'current_page': 'exercises'})
