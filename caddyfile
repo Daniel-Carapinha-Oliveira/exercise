@@ -1,0 +1,4 @@
+localhost {
+    reverse_proxy exercise:8000
+    tls internal
+}

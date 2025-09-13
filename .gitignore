@@ -1,2 +1,4 @@
 .idea/
 .env
+/env/exercise.env
+/env/exercise_db.env
