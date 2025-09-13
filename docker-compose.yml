@@ -1,0 +1,51 @@
+services:
+  exercise:
+    restart: unless-stopped
+    build: .
+    image: exercise:latest
+    container_name: exercise
+    command: ./bin/boot_exercise.sh
+    env_file: ./env/exercise.env
+    depends_on:
+      - db
+    networks:
+      - network
+
+  db:
+    restart: unless-stopped
+    image: postgres
+    container_name: exercise_db
+    env_file: ./env/exercise_db.env
+    volumes:
+      - pgdb-data:/var/lib/postgresql/data
+    networks:
+      - network
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - network
+    depends_on:
+      - exercise
+
+volumes:
+  caddy_data:
+  caddy_config:
+  pgdb-data:
+    driver: local
+
+networks:
+  network:
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.28.0.0/24'

@@ -1,0 +1,1 @@
+from exercise.settings.base import *
