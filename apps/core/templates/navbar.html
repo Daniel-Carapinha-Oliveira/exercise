@@ -1,14 +1,14 @@
 {% load static %}
 
 <head>
-    <title>Navbar</title>
+    <title>{% block title %}My Site{% endblock %}</title>
     <!-- Bootstrap CSS -->
     <link href="{% static 'bootstrap_5.3.8/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Bootstrap JS (optional, for components like dropdowns) -->
     <script src="{% static 'bootstrap_5.3.8/js/bootstrap.bundle.min.js' %}"></script>
 </head>
 
-<body>
+<body class="bg-black text-white">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
