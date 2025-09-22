@@ -1,0 +1,35 @@
+{% extends "navbar.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="" style="height: 50px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fuild m-3">
+        <div class="row justify-content-center">
+            {% for exercise in exercises_queryset %}
+            <div class="col-sm-11 col-lg-5 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        {{ exercise.muscle_part }} / {{ exercise.workout_type }}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ exercise.name }}</h5>
+                        <p class="card-text">{{ exercise.description }}</p>
+                        <img src="{{ exercise.image.url }}" class="card-img-top" style="height: 300px; object-fit: contain;" alt="...">
+                        <a href="#" class="btn btn-primary mt-2">More info</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
