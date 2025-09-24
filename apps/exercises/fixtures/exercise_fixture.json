@@ -5,7 +5,7 @@
     "fields": {
       "name": "Bicep Curl",
       "description": "This is the bicep curl exercise, consists of...",
-      "image": "exercises/bicep-curl.webp",
+      "image": "img/exercises/bicep-curl.webp",
       "workout_type": "gym",
       "muscle_part": 1
     }
@@ -16,7 +16,7 @@
     "fields": {
       "name": "Bicep Hammer Curl",
       "description": "This is the bicep curl exercise, consists of...",
-      "image": "exercises/bicep-hammer-curl.jpeg",
+      "image": "img/exercises/bicep-hammer-curl.jpeg",
       "workout_type": "gym",
       "muscle_part": 1
     }
@@ -27,7 +27,7 @@
     "fields": {
       "name": "Decline Bicep Curl",
       "description": "This is the decline bicep curl... it consists of...",
-      "image": "exercises/decline_bicep_curl.jpg",
+      "image": "img/exercises/decline_bicep_curl.jpg",
       "workout_type": "gym",
       "muscle_part": 1
     }

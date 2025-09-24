@@ -10,7 +10,7 @@ class Muscle(models.Model):
 
     image = models.ImageField(
         verbose_name='image',
-        upload_to='muscles/'
+        upload_to='img/muscles/'
     )
 
     # ForeignKeys
@@ -22,7 +22,7 @@ class Muscle(models.Model):
     )
 
     class Meta:
-        db_table = 'Muscle'
+        db_table = 'muscle'
         ordering = ['name']
         verbose_name = 'muscle'
         verbose_name_plural = 'muscles'
@@ -40,7 +40,7 @@ class BodyPart(models.Model):
 
     image = models.ImageField(
         verbose_name='image',
-        upload_to='body_parts/'
+        upload_to='img/body_parts/'
     )
 
     description = models.TextField(
@@ -48,7 +48,7 @@ class BodyPart(models.Model):
     )
 
     class Meta:
-        db_table = 'BodyPart'
+        db_table = 'body_part'
         ordering = ['name']
         verbose_name = 'body part'
         verbose_name_plural = 'body parts'
@@ -73,7 +73,7 @@ class MusclePart(models.Model):
     )
 
     class Meta:
-        db_table = 'MusclePart'
+        db_table = 'muscle_part'
         ordering = ['name']
         verbose_name = 'muscle part'
         verbose_name_plural = 'muscle parts'
@@ -99,7 +99,7 @@ class Exercise(models.Model):
 
     image = models.ImageField(
         verbose_name='image',
-        upload_to='exercises/'
+        upload_to='img/exercises/'
     )
 
     workout_type = models.CharField(
@@ -117,7 +117,7 @@ class Exercise(models.Model):
     )
 
     class Meta:
-        db_table = 'Exercise'
+        db_table = 'exercise'
         ordering = ['name']
         verbose_name = 'exercise'
         verbose_name_plural = 'exercises'

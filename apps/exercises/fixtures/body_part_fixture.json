@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "Back",
-      "image": "body_parts/back_cDCjnSx.jpg",
+      "image": "img/body_parts/back_cDCjnSx.jpg",
       "description": "desc1"
     }
   },
@@ -13,7 +13,7 @@
     "pk": 2,
     "fields": {
       "name": "Biceps",
-      "image": "body_parts/biceps_x46diqh.webp",
+      "image": "img/body_parts/biceps_x46diqh.webp",
       "description": "desc2"
     }
   },
@@ -22,7 +22,7 @@
     "pk": 3,
     "fields": {
       "name": "Chest",
-      "image": "body_parts/chest_nGMfFzA.webp",
+      "image": "img/body_parts/chest_nGMfFzA.webp",
       "description": "desc3"
     }
   },
@@ -31,7 +31,7 @@
     "pk": 4,
     "fields": {
       "name": "Legs",
-      "image": "body_parts/legs_fyeJNBq.jpg",
+      "image": "img/body_parts/legs_fyeJNBq.jpg",
       "description": "desc4"
     }
   },
@@ -40,7 +40,7 @@
     "pk": 5,
     "fields": {
       "name": "Shoulders",
-      "image": "body_parts/shoulders_0IjZUnr.jpeg",
+      "image": "img/body_parts/shoulders_0IjZUnr.jpeg",
       "description": "desc5"
     }
   },
@@ -49,7 +49,7 @@
     "pk": 6,
     "fields": {
       "name": "Triceps",
-      "image": "body_parts/triceps_K33J9NJ.jpeg",
+      "image": "img/body_parts/triceps_K33J9NJ.jpeg",
       "description": "desc6"
     }
   }

@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "Bicep",
-      "image": "muscles/biceps_1ozjpaD.webp",
+      "image": "img/muscles/biceps_1ozjpaD.webp",
       "body_part": 2
     }
   }
