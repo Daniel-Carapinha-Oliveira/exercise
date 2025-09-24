@@ -11,6 +11,7 @@ def body_parts(request):
 
 def exercises(request, body_part_id):
     exercises_queryset = Exercise.objects.filter(muscle_part__muscle__body_part_id=body_part_id)
+
     return render(request, "exercises.html", {
         'current_page': 'exercises',
         'exercises_queryset': exercises_queryset
