@@ -9,6 +9,7 @@
     <form method="get">
         {{ filter.form.as_p }}
         <button type="submit">Search</button>
+        <a href="{% url 'all_exercises' %}" class="btn btn-secondary">Undo filters</a>
     </form>
 
     <div class="container-fuild m-3">
