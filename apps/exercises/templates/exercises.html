@@ -3,21 +3,33 @@
 
 {% block content %}
 
-    <div class="container-lg text-center my-3">
-        <div class="row m-3">
-            {% for body_part in body_parts %}
+    <div class="container">
+        <div class="row">
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ body_part.image.url }}" class="card-img-top" style="max-height: 200px;" alt="...">
+                <div class="" style="height: 50px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fuild m-3">
+        <div class="row justify-content-center">
+            {% for exercise in exercises_queryset %}
+            <div class="col-sm-11 col-lg-5 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        {{ exercise.muscle_part }} / {{ exercise.workout_type }}
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{ body_part.name }}</h5>
-                        <p class="card-text">{{ body_part.description }}</p>
-                        <a href="{% url 'individual_exercises' body_part.id %}" class="btn btn-primary">See Exercises</a>
+                        <h5 class="card-title text-center">{{ exercise.name }}</h5>
+                        <p class="card-text">{{ exercise.description }}</p>
+                        <img src="{{ exercise.image.url }}" class="card-img-top" style="height: 300px; object-fit: contain;" alt="...">
+                        <a href="#" class="btn btn-primary mt-2">More info</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-     </div>
+    </div>
 
 {% endblock %}
+

@@ -1,11 +1,11 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import exercises, individual_exercises
+from .views import body_parts, exercises
 
 urlpatterns = [
-    path('exercises', exercises, name='exercises'),
-    path('individual_exercises/<int:body_part_id>/', individual_exercises, name='individual_exercises')
+    path('body_parts', body_parts, name='body_parts'),
+    path('exercises/<int:body_part_id>/', exercises, name='exercises')
 ]
 
 if settings.DEBUG:

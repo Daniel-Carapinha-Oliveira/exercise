@@ -1,0 +1,23 @@
+{% extends "navbar.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-lg text-center my-3">
+        <div class="row m-3">
+            {% for body_part in body_parts %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ body_part.image.url }}" class="card-img-top" style="max-height: 200px;" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ body_part.name }}</h5>
+                        <p class="card-text">{{ body_part.description }}</p>
+                        <a href="{% url 'exercises' body_part.id %}" class="btn btn-primary">See Exercises</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+     </div>
+
+{% endblock %}
