@@ -1,0 +1,10 @@
+[
+  {
+    "model": "exercises.musclepart",
+    "pk": 1,
+    "fields": {
+      "name": "Inner Bicep",
+      "muscle": 1
+    }
+  }
+]
