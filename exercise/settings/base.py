@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     # internal apps
     'apps.core',
     'apps.exercises',
+    # external apps
+    'django_filters'
 ]
 
 MIDDLEWARE = [

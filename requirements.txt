@@ -4,3 +4,4 @@ psycopg2-binary==2.9.10
 docker==7.1.0
 whitenoise==6.10.0
 Pillow==11.3.0
+django-filter==25.1
