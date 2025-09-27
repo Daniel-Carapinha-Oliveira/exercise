@@ -23,7 +23,7 @@ class AllExercises(FilterView):
     model = Exercise
     filterset_class = ExerciseFilter
     template_name = 'exercise_list.html'
-    paginate_by = 2
+    paginate_by = 1
 
     def get_queryset(self):
         # Optimize queries if you have related objects
