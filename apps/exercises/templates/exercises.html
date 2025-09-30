@@ -55,8 +55,19 @@
                                 {% endfor %}
                             </select>
                         </div>
+                        <div class="mb-3">
+                            <label for="id_muscle_part" class="form-label">Muscle part</label>
+                            <select name="muscle_part" id="id_muscle_part" class="form-select">
+                                {% for value, label in filter.form.muscle_part.field.choices %}
+                                    <option value="{{ value }}"
+                                            {% if filter.form.muscle_part.value == value|stringformat:"s" %}selected{% endif %}>
+                                        {{ label }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="submit" class="btn btn-primary">Filter</button>
                             <a href="{% url 'exercises' %}" class="btn btn-danger">Reset filters</a>
                         </div>
                     </form>
