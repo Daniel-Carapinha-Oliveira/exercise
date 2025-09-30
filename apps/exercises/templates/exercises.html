@@ -87,21 +87,21 @@
             </div>
             <!-- Pagination -->
             <div class="d-flex justify-content-center align-items-center mt-1">
-                {% if page_obj.has_previous %}
-                    <a href="?{{ querystring }}&page={{ page_obj.previous_page_number }}"
-                       class="btn btn-outline-primary me-2">Previous</a>
-                {% else %}
-                    <span></span>
-                {% endif %}
+                <div style="width: 90px;" class="text-center">
+                    {% if page_obj.has_previous %}
+                        <a href="?{{ querystring }}&page={{ page_obj.previous_page_number }}"
+                           class="btn btn-outline-primary">Previous</a>
+                    {% endif %}
+                </div>
 
-                <span class="mx-2">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                <span class="mx-3">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
-                {% if page_obj.has_next %}
-                    <a href="?{{ querystring }}&page={{ page_obj.next_page_number }}"
-                       class="btn btn-outline-primary me-2">Next</a>
-                {% else %}
-                    <span></span>
-                {% endif %}
+                <div style="width: 120px;" class="text-center">
+                    {% if page_obj.has_next %}
+                        <a href="?{{ querystring }}&page={{ page_obj.next_page_number }}"
+                           class="btn btn-outline-primary">Next</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </main>
