@@ -8,6 +8,9 @@ RUN pip install uwsgi
 
 COPY requirements.txt requirements.txt
 
+RUN mkdir -p /exercise/media/img/
+COPY static/imgs /exercise/media/img/
+
 RUN pip install -r requirements.txt
 
 COPY . /exercise
