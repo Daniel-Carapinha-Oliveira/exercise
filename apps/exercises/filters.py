@@ -5,10 +5,12 @@ from .models import Exercise, BodyPart, Muscle, MusclePart
 class ExerciseFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(lookup_expr='icontains')
     description = django_filters.CharFilter(lookup_expr='icontains')
+
     workout_type = django_filters.ChoiceFilter(
         choices=Exercise.WorkoutType.choices,
         empty_label="Not selected"
     )
+
     body_part = django_filters.ModelChoiceFilter(
         queryset=BodyPart.objects.all(),
         field_name='muscle_part__muscle__body_part',
@@ -16,19 +18,21 @@ class ExerciseFilter(django_filters.FilterSet):
         label='Body Part',
         empty_label="Not selected"
     )
+
     muscle = django_filters.ModelChoiceFilter(
         queryset=Muscle.objects.none(),
         field_name='muscle_part__muscle',
         to_field_name='id',
         label='Muscle',
-        empty_label="Not selected"
+        empty_label="Select a body part"
     )
+
     muscle_part = django_filters.ModelChoiceFilter(
         queryset=MusclePart.objects.none(),
         field_name='muscle_part',
         to_field_name='id',
         label='Muscle Part',
-        empty_label="Not selected"
+        empty_label="Select a muscle"
     )
 
     class Meta:
@@ -38,34 +42,34 @@ class ExerciseFilter(django_filters.FilterSet):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # Narrow down muscles by body_part
-        body_part = self.data.get('body_part')
-        if body_part:
-            try:
-                body_part_id = int(body_part)
-                qs = Muscle.objects.filter(body_part_id=body_part_id)
-                self.filters['muscle'].queryset = qs
-                self.form.fields['muscle'].queryset = qs
-                self.form.fields['muscle'].empty_label = "None available" if not qs.exists() else "Not selected"
-            except (ValueError, TypeError):
-                pass
-        else:
-            self.filters['muscle'].queryset = Muscle.objects.none()
-            self.form.fields['muscle'].queryset = Muscle.objects.none()
-            self.form.fields['muscle'].empty_label = "Select a body part"
+        # --- Helper function to reduce repetition ---
+        def set_dependent_queryset(parent_field, child_field, model, fk_field, empty_default):
+            parent_id = self.data.get(parent_field)
+            if parent_id and str(parent_id).isdigit():
+                qs = model.objects.filter(**{fk_field: parent_id})
+                self.filters[child_field].queryset = qs
 
-        # Narrow down muscle_parts by muscle
-        muscle = self.data.get('muscle')
-        if muscle:
-            try:
-                muscle_id = int(muscle)
-                qs = MusclePart.objects.filter(muscle_id=muscle_id)
-                self.filters['muscle_part'].queryset = qs
-                self.form.fields['muscle_part'].queryset = qs
-                self.form.fields['muscle_part'].empty_label = "None available" if not qs.exists() else "Not selected"
-            except (ValueError, TypeError):
-                pass
-        else:
-            self.filters['muscle_part'].queryset = MusclePart.objects.none()
-            self.form.fields['muscle_part'].queryset = MusclePart.objects.none()
-            self.form.fields['muscle_part'].empty_label = "Select a muscle"
+                if not qs.exists():
+                    self.filters[child_field].extra['empty_label'] = "None available"
+                else:
+                    self.filters[child_field].extra['empty_label'] = "Not selected"
+            else:
+                self.filters[child_field].queryset = model.objects.none()
+                self.filters[child_field].extra['empty_label'] = empty_default
+
+
+        set_dependent_queryset(
+            parent_field='body_part',
+            child_field='muscle',
+            model=Muscle,
+            fk_field='body_part_id',
+            empty_default="Select a body part first"
+        )
+
+        set_dependent_queryset(
+            parent_field='muscle',
+            child_field='muscle_part',
+            model=MusclePart,
+            fk_field='muscle_id',
+            empty_default="Select a muscle first"
+        )
