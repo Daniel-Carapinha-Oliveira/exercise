@@ -4,14 +4,14 @@
 
 {% block content %}
 
-<div class="container-fluid py-3">
+<div class="container-fluid my-3">
 
-    <button class="btn btn-info mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCard"
+    <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#filterCard"
             aria-expanded="false" aria-controls="filterCard">
         Toggle Filters
     </button>
 
-    <div class="collapse" id="filterCard">
+    <div class="collapse my-3" id="filterCard">
         <div class="card">
             <div class="card-header">
                 <h5 class="mb-0">Filters</h5>
@@ -82,7 +82,7 @@
     </div>
 </div>
 
-<div class="container-fluid p-3">
+<div class="container-fluid p-2">
     <div class="row justify-content-center">
         {% for exercise in page_obj %}
         <div class="col-sm-11 col-lg-6 mb-3">
