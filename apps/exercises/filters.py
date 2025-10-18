@@ -24,7 +24,7 @@ class ExerciseFilter(django_filters.FilterSet):
         field_name='muscle_part__muscle',
         to_field_name='id',
         label='Muscle',
-        empty_label="Select a body part"
+        empty_label="Not selected"
     )
 
     muscle_part = django_filters.ModelChoiceFilter(
@@ -32,7 +32,7 @@ class ExerciseFilter(django_filters.FilterSet):
         field_name='muscle_part',
         to_field_name='id',
         label='Muscle Part',
-        empty_label="Select a muscle"
+        empty_label="Not selected"
     )
 
     class Meta:
@@ -63,7 +63,7 @@ class ExerciseFilter(django_filters.FilterSet):
             child_field='muscle',
             model=Muscle,
             fk_field='body_part_id',
-            empty_default="Select a body part first"
+            empty_default="Select a body part"
         )
 
         set_dependent_queryset(
@@ -71,5 +71,5 @@ class ExerciseFilter(django_filters.FilterSet):
             child_field='muscle_part',
             model=MusclePart,
             fk_field='muscle_id',
-            empty_default="Select a muscle first"
+            empty_default="Select a muscle"
         )
