@@ -4,31 +4,31 @@
 
 {% block content %}
 
-<div class="container-fluid my-3">
+<div class="container-fluid my-3 justify-content-center text-center">
 
     <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#filterCard"
             aria-expanded="false" aria-controls="filterCard">
         Toggle Filters
     </button>
 
-    <div class="collapse my-3" id="filterCard">
+    <div class="collapse my-3 mx-auto" style="width: 100%;" id="filterCard">
         <div class="card">
             <div class="card-header">
                 <h5 class="mb-0">Filters</h5>
             </div>
             <div class="card-body">
                 <form method="get" class="row g-2 align-items-end">
-                    <div class="col-auto">
+                    <div class="col-12 col-md-auto">
                         <label for="id_name" class="form-label">Exercise name</label>
                         <input type="text" name="name" id="id_name" value="{{ filter.form.name.value|default:'' }}"
                                class="form-control">
                     </div>
-                    <div class="col-auto">
+                    <div class="col-12 col-md-auto">
                         <label for="id_description" class="form-label">Description</label>
                         <input type="text" name="description" id="id_description"
                                value="{{ filter.form.description.value|default:'' }}" class="form-control">
                     </div>
-                    <div class="col-auto">
+                    <div class="col-12 col-md-auto">
                         <label for="id_workout_type" class="form-label">Workout type</label>
                         <select name="workout_type" id="id_workout_type" class="form-select">
                             {% for value, label in filter.form.workout_type.field.choices %}
@@ -39,7 +39,7 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-12 col-md-auto">
                         <label for="id_body_part" class="form-label">Body part</label>
                         <select name="body_part" id="id_body_part" class="form-select">
                             {% for value, label in filter.form.body_part.field.choices %}
@@ -50,7 +50,7 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-12 col-md-auto">
                         <label for="id_muscle" class="form-label">Muscle</label>
                         <select name="muscle" id="id_muscle" class="form-select">
                             {% for value, label in filter.form.muscle.field.choices %}
@@ -61,7 +61,7 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-12 col-md-auto">
                         <label for="id_muscle_part" class="form-label">Muscle part</label>
                         <select name="muscle_part" id="id_muscle_part" class="form-select">
                             {% for value, label in filter.form.muscle_part.field.choices %}
