@@ -31,6 +31,7 @@ class Exercises(FilterView):
         querydict = self.request.GET.copy()
         querydict.pop('page', None)
         context['querystring'] = querydict.urlencode()
+        context['current_page'] = 'exercises'
         return context
 
 # TODO: add api to allow to add exercise, create a user and give to recruiter.
