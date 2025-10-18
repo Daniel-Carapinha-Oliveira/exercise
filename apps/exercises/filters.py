@@ -52,7 +52,7 @@ class ExerciseFilter(django_filters.FilterSet):
         else:
             self.filters['muscle'].queryset = Muscle.objects.none()
             self.form.fields['muscle'].queryset = Muscle.objects.none()
-            self.form.fields['muscle'].empty_label = "First select a body part"
+            self.form.fields['muscle'].empty_label = "Select a body part"
 
         # Narrow down muscle_parts by muscle
         muscle = self.data.get('muscle')
@@ -68,4 +68,4 @@ class ExerciseFilter(django_filters.FilterSet):
         else:
             self.filters['muscle_part'].queryset = MusclePart.objects.none()
             self.form.fields['muscle_part'].queryset = MusclePart.objects.none()
-            self.form.fields['muscle_part'].empty_label = "First select a muscle"
+            self.form.fields['muscle_part'].empty_label = "Select a muscle"
