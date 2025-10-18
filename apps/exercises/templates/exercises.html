@@ -6,104 +6,119 @@
 
 <div class="container-fluid py-3">
 
-    <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCard" aria-expanded="false" aria-controls="filterCard">
+    <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCard"
+            aria-expanded="false" aria-controls="filterCard">
         Toggle Filters
     </button>
 
     <div class="collapse" id="filterCard">
-    <div class="card">
-        <div class="card-header">
-            <h5 class="mb-0">Filters</h5>
-        </div>
-        <div class="card-body">
-            <form method="get" class="row g-2 align-items-end">
-                <div class="col-auto">
-                    <label for="id_name" class="form-label">Exercise name</label>
-                    <input type="text" name="name" id="id_name" value="{{ filter.form.name.value|default:'' }}" class="form-control">
-                </div>
-                <div class="col-auto">
-                    <label for="id_description" class="form-label">Description</label>
-                    <input type="text" name="description" id="id_description" value="{{ filter.form.description.value|default:'' }}" class="form-control">
-                </div>
-                <div class="col-auto">
-                    <label for="id_workout_type" class="form-label">Workout type</label>
-                    <select name="workout_type" id="id_workout_type" class="form-select">
-                        {% for value, label in filter.form.workout_type.field.choices %}
-                            <option value="{{ value }}" {% if filter.form.workout_type.value == value %}selected{% endif %}>{{ label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="id_body_part" class="form-label">Body part</label>
-                    <select name="body_part" id="id_body_part" class="form-select">
-                        {% for value, label in filter.form.body_part.field.choices %}
-                            <option value="{{ value }}" {% if filter.form.body_part.value == value|stringformat:"s" %}selected{% endif %}>{{ label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="id_muscle" class="form-label">Muscle</label>
-                    <select name="muscle" id="id_muscle" class="form-select">
-                        {% for value, label in filter.form.muscle.field.choices %}
-                            <option value="{{ value }}" {% if filter.form.muscle.value == value|stringformat:"s" %}selected{% endif %}>{{ label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <label for="id_muscle_part" class="form-label">Muscle part</label>
-                    <select name="muscle_part" id="id_muscle_part" class="form-select">
-                        {% for value, label in filter.form.muscle_part.field.choices %}
-                            <option value="{{ value }}" {% if filter.form.muscle_part.value == value|stringformat:"s" %}selected{% endif %}>{{ label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-auto d-flex gap-2">
-                    <button type="submit" class="btn btn-primary">Filter</button>
-                    <a href="{% url 'exercises' %}" class="btn btn-danger">Reset filters</a>
-                </div>
-            </form>
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Filters</h5>
+            </div>
+            <div class="card-body">
+                <form method="get" class="row g-2 align-items-end">
+                    <div class="col-auto">
+                        <label for="id_name" class="form-label">Exercise name</label>
+                        <input type="text" name="name" id="id_name" value="{{ filter.form.name.value|default:'' }}"
+                               class="form-control">
+                    </div>
+                    <div class="col-auto">
+                        <label for="id_description" class="form-label">Description</label>
+                        <input type="text" name="description" id="id_description"
+                               value="{{ filter.form.description.value|default:'' }}" class="form-control">
+                    </div>
+                    <div class="col-auto">
+                        <label for="id_workout_type" class="form-label">Workout type</label>
+                        <select name="workout_type" id="id_workout_type" class="form-select">
+                            {% for value, label in filter.form.workout_type.field.choices %}
+                            <option
+                                    value="{{ value }}"
+                                    {% if filter.form.workout_type.value == value %}selected{% endif %}>{{ label }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <label for="id_body_part" class="form-label">Body part</label>
+                        <select name="body_part" id="id_body_part" class="form-select">
+                            {% for value, label in filter.form.body_part.field.choices %}
+                            <option
+                                    value="{{ value }}"
+                                    {% if filter.form.body_part.value == value|stringformat:"s" %}
+                            selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <label for="id_muscle" class="form-label">Muscle</label>
+                        <select name="muscle" id="id_muscle" class="form-select">
+                            {% for value, label in filter.form.muscle.field.choices %}
+                            <option
+                                    value="{{ value }}"
+                                    {% if filter.form.muscle.value == value|stringformat:"s" %}
+                            selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <label for="id_muscle_part" class="form-label">Muscle part</label>
+                        <select name="muscle_part" id="id_muscle_part" class="form-select">
+                            {% for value, label in filter.form.muscle_part.field.choices %}
+                            <option
+                                    value="{{ value }}"
+                                    {% if filter.form.muscle_part.value == value|stringformat:"s" %}
+                            selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-auto d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                        <a href="{% url 'exercises' %}" class="btn btn-danger">Reset filters</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-</div>
 
-        <div class="container-fluid p-3">
-            <div class="row justify-content-center">
-                {% for exercise in page_obj %}
-                    <div class="col-sm-11 col-lg-6 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                {{ exercise.muscle_part }} / {{ exercise.workout_type }}
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">{{ exercise.name }}</h5>
-                                <p class="card-text">{{ exercise.description }}</p>
-                                <img src="{{ exercise.image.url }}" class="card-img-top"
-                                     style="height: 300px; object-fit: contain;" alt="...">
-                                <a href="#" class="btn btn-primary mt-2">More info</a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <!-- Pagination -->
-            <div class="d-flex justify-content-center align-items-center mt-1">
-                <div style="width: 90px;" class="text-center">
-                    {% if page_obj.has_previous %}
-                        <a href="?{{ querystring }}&page={{ page_obj.previous_page_number }}"
-                           class="btn btn-outline-primary">Previous</a>
-                    {% endif %}
+<div class="container-fluid p-3">
+    <div class="row justify-content-center">
+        {% for exercise in page_obj %}
+        <div class="col-sm-11 col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    {{ exercise.muscle_part }} / {{ exercise.workout_type }}
                 </div>
-
-                <span class="mx-3">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-
-                <div style="width: 120px;" class="text-center">
-                    {% if page_obj.has_next %}
-                        <a href="?{{ querystring }}&page={{ page_obj.next_page_number }}"
-                           class="btn btn-outline-primary">Next</a>
-                    {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ exercise.name }}</h5>
+                    <p class="card-text">{{ exercise.description }}</p>
+                    <img src="{{ exercise.image.url }}" class="card-img-top"
+                         style="height: 300px; object-fit: contain;" alt="...">
+                    <a href="#" class="btn btn-primary mt-2">More info</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
+    </div>
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center align-items-center mt-1">
+        <div style="width: 90px;" class="text-center">
+            {% if page_obj.has_previous %}
+            <a href="?{{ querystring }}&page={{ page_obj.previous_page_number }}"
+               class="btn btn-outline-primary">Previous</a>
+            {% endif %}
+        </div>
+
+        <span class="mx-3">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+        <div style="width: 120px;" class="text-center">
+            {% if page_obj.has_next %}
+            <a href="?{{ querystring }}&page={{ page_obj.next_page_number }}"
+               class="btn btn-outline-primary">Next</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
