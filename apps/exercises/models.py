@@ -8,11 +8,6 @@ class Muscle(models.Model):
         unique=True,
     )
 
-    image = models.ImageField(
-        verbose_name='image',
-        upload_to='img/muscles/'
-    )
-
     # ForeignKeys
     body_part = models.ForeignKey(
         'exercises.BodyPart',
