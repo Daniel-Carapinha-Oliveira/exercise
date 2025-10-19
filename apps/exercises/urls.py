@@ -9,6 +9,7 @@ urlpatterns = [
     path('muscles', views.muscles, name='muscles'),
     path('api/muscles/', views.get_muscles, name='api_muscles'),
     path('api/muscle-parts/', views.get_muscle_parts, name='api_muscle_parts'),
+    path('api/exercises/', views.ExerciseAPIView.as_view(), name='api_exercises'),
 ]
 
 if settings.DEBUG:
