@@ -42,10 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         muscleSelect.disabled = false;
-        muscleSelect.innerHTML = `<option value="">Not selected</option>`;
+        muscleSelect.innerHTML = ""; // clear previous options
+
+        const defaultOption = new Option("Not selected", "");
+        muscleSelect.appendChild(defaultOption);
+
         data.forEach(m => {
-          const selected = (selectedMuscleId && selectedMuscleId == m.id) ? "selected" : "";
-          muscleSelect.innerHTML += `<option value="${m.id}" ${selected}>${m.name}</option>`;
+          const option = new Option(m.name, m.id);
+          if (selectedMuscleId && selectedMuscleId == m.id) {
+            option.selected = true;
+          }
+          muscleSelect.appendChild(option);
         });
       })
       .catch(() => {
@@ -72,10 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         musclePartSelect.disabled = false;
-        musclePartSelect.innerHTML = `<option value="">Not selected</option>`;
+        musclePartSelect.innerHTML = ""; // clear previous options
+
+        const defaultOption = new Option("Not selected", "");
+        musclePartSelect.appendChild(defaultOption);
+
         data.forEach(mp => {
-          const selected = (selectedPartId && selectedPartId == mp.id) ? "selected" : "";
-          musclePartSelect.innerHTML += `<option value="${mp.id}" ${selected}>${mp.name}</option>`;
+          const option = new Option(mp.name, mp.id);
+          if (selectedPartId && selectedPartId == mp.id) {
+            option.selected = true;
+          }
+          musclePartSelect.appendChild(option);
         });
       })
       .catch(() => {
