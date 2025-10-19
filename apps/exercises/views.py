@@ -1,5 +1,12 @@
 from django.shortcuts import render
 from django_filters.views import FilterView
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from .serializers import ExerciseSerializer
+from rest_framework.response import Response
+from drf_spectacular.utils import extend_schema
+
 from .filters import ExerciseFilter
 from apps.exercises.models import BodyPart, Exercise, Muscle, MusclePart
 from django.http import JsonResponse
@@ -45,4 +52,13 @@ def get_muscle_parts(request):
     parts = MusclePart.objects.filter(muscle_id=muscle_id).values('id', 'name')
     return JsonResponse(list(parts), safe=False)
 
-# TODO: add api to allow to add exercise, create a user and give to recruiter.
+@extend_schema(tags=['Exercises'], responses=ExerciseSerializer(many=True))
+class ExerciseAPIView(APIView):
+    authentication_classes = [BasicAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+    http_method_names = ['get']
+
+    def get(self, request):
+        exercises = Exercise.objects.all()
+        serializer = ExerciseSerializer(exercises, many=True)
+        return Response(serializer.data)
