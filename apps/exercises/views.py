@@ -12,14 +12,6 @@ from .filters import ExerciseFilter
 from apps.exercises.models import BodyPart, Exercise, Muscle, MusclePart
 from django.http import JsonResponse
 
-def muscles(request):
-    all_muscles = Muscle.objects.all()
-    return render(
-        request,
-        "muscles.html",
-        {'current_page': 'exercises', 'muscles': all_muscles}
-    )
-
 def body_parts(request):
     all_body_parts = BodyPart.objects.all()
     return render(
