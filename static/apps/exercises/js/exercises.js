@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectedMuscle = muscleSelect.value || null;
   const selectedMusclePart = musclePartSelect.value || null;
 
-  console.log(selectedBodyPart, selectedMuscle, selectedMusclePart)
-
   // function to set a placeholder on a select element and its disabled state
   function setSelectElementPlaceholder(element, message, disabled_state = true) {
     /*
