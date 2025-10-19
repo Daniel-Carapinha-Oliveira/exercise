@@ -53,7 +53,11 @@ def get_muscle_parts(request):
     parts = MusclePart.objects.filter(muscle_id=muscle_id).values('id', 'name')
     return JsonResponse(list(parts), safe=False)
 
-@extend_schema(tags=['Exercises'], responses=ExerciseSerializer(many=True))
+@extend_schema(
+    tags=['Exercises'],
+    request=ExerciseSerializer,
+    responses=ExerciseSerializer(many=True)
+)
 class ExerciseAPIView(APIView):
     authentication_classes = [BasicAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
