@@ -52,8 +52,7 @@
                     </div>
                     <div class="col-12 col-md-auto">
                         <label for="id_muscle" class="form-label">Muscle</label>
-                        <select name="muscle" id="id_muscle" class="form-select"
-                            {% if not filter.form.muscle.field.queryset.exists %}disabled{% endif %}>
+                        <select name="muscle" id="id_muscle" class="form-select">
                             {% for value, label in filter.form.muscle.field.choices %}
                             <option
                                 value="{{ value }}"
@@ -64,8 +63,7 @@
                     </div>
                     <div class="col-12 col-md-auto">
                         <label for="id_muscle_part" class="form-label">Muscle part</label>
-                        <select name="muscle_part" id="id_muscle_part" class="form-select"
-                            {% if not filter.form.muscle_part.field.queryset.exists %}disabled{% endif %}>
+                        <select name="muscle_part" id="id_muscle_part" class="form-select">
                             {% for value, label in filter.form.muscle_part.field.choices %}
                             <option
                                 value="{{ value }}"
@@ -122,5 +120,7 @@
         </div>
     </div>
 </div>
+
+<script src="{% static 'apps/exercises/js/exercises.js' %}"></script>
 
 {% endblock %}

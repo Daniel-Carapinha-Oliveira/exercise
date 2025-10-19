@@ -8,7 +8,7 @@ class ExerciseFilter(django_filters.FilterSet):
 
     workout_type = django_filters.ChoiceFilter(
         choices=Exercise.WorkoutType.choices,
-        empty_label="Not selected"
+        empty_label="-----------"
     )
 
     body_part = django_filters.ModelChoiceFilter(
@@ -16,7 +16,7 @@ class ExerciseFilter(django_filters.FilterSet):
         field_name='muscle_part__muscle__body_part',
         to_field_name='id',
         label='Body Part',
-        empty_label="Not selected"
+        empty_label="-----------"
     )
 
     muscle = django_filters.ModelChoiceFilter(
@@ -24,7 +24,7 @@ class ExerciseFilter(django_filters.FilterSet):
         field_name='muscle_part__muscle',
         to_field_name='id',
         label='Muscle',
-        empty_label="Not selected"
+        empty_label="-----------"
     )
 
     muscle_part = django_filters.ModelChoiceFilter(
@@ -32,7 +32,7 @@ class ExerciseFilter(django_filters.FilterSet):
         field_name='muscle_part',
         to_field_name='id',
         label='Muscle Part',
-        empty_label="Not selected"
+        empty_label="-----------"
     )
 
     class Meta:
@@ -42,34 +42,12 @@ class ExerciseFilter(django_filters.FilterSet):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # --- Helper function to reduce repetition ---
-        def set_dependent_queryset(parent_field, child_field, model, fk_field, empty_default):
-            parent_id = self.data.get(parent_field)
-            if parent_id and str(parent_id).isdigit():
-                qs = model.objects.filter(**{fk_field: parent_id})
-                self.filters[child_field].queryset = qs
+        # Dynamically populate muscles if body_part is selected
+        body_part = self.data.get('body_part')
+        if body_part:
+            self.filters['muscle'].queryset = Muscle.objects.filter(body_part_id=body_part)
 
-                if not qs.exists():
-                    self.filters[child_field].extra['empty_label'] = "None available"
-                else:
-                    self.filters[child_field].extra['empty_label'] = "Not selected"
-            else:
-                self.filters[child_field].queryset = model.objects.none()
-                self.filters[child_field].extra['empty_label'] = empty_default
-
-
-        set_dependent_queryset(
-            parent_field='body_part',
-            child_field='muscle',
-            model=Muscle,
-            fk_field='body_part_id',
-            empty_default="Select a body part first"
-        )
-
-        set_dependent_queryset(
-            parent_field='muscle',
-            child_field='muscle_part',
-            model=MusclePart,
-            fk_field='muscle_id',
-            empty_default="Select a muscle first"
-        )
+        # Dynamically populate muscle parts if muscle is selected
+        muscle = self.data.get('muscle')
+        if muscle:
+            self.filters['muscle_part'].queryset = MusclePart.objects.filter(muscle_id=muscle)
