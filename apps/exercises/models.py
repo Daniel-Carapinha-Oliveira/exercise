@@ -55,8 +55,7 @@ class BodyPart(models.Model):
 class MusclePart(models.Model):
     name = models.CharField(
         verbose_name='name',
-        max_length=100,
-        unique=True,
+        max_length=100
     )
 
     # ForeignKeys
@@ -72,6 +71,9 @@ class MusclePart(models.Model):
         ordering = ['name']
         verbose_name = 'muscle part'
         verbose_name_plural = 'muscle parts'
+        constraints = [
+            models.UniqueConstraint(fields=['muscle', 'name'], name='unique_together_muscle_name')
+        ]
 
     def __str__(self):
         return self.name
