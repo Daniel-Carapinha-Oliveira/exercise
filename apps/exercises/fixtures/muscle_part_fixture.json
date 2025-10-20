@@ -3,8 +3,80 @@
     "model": "exercises.musclepart",
     "pk": 1,
     "fields": {
-      "name": "Inner Bicep",
+      "name": "Whole muscle",
       "muscle": 1
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 2,
+    "fields": {
+      "name": "Whole Trapezius",
+      "body_part": 2
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 3,
+    "fields": {
+      "name": "Long head",
+      "muscle": 3
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 4,
+    "fields": {
+      "name": "Short head",
+      "muscle": 3
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 5,
+    "fields": {
+      "name": "whole chest",
+      "muscle": 4
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 6,
+    "fields": {
+      "name": "whole quadriceps",
+      "muscle": 5
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 7,
+    "fields": {
+      "name": "whole calves",
+      "muscle": 6
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 8,
+    "fields": {
+      "name": "whole shoulders",
+      "muscle": 6
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 9,
+    "fields": {
+      "name": "Long head",
+      "muscle": 6
+    }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 10,
+    "fields": {
+      "name": "Lateral head",
+      "muscle": 6
     }
   }
 ]
