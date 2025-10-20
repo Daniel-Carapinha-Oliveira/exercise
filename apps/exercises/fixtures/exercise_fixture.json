@@ -48,7 +48,7 @@
     "pk": 5,
     "fields": {
       "name": "Leg Extension",
-      "description": "Sit on a leg extension machine with your back against the pad and your legs under the padded lever. Grip the handles for support and extend your legs until they are straight. Hold briefly at the top, then slowly lower back down. Equipment needed: leg extension machine.",
+      "description": "To perform this exercise you must sit on a leg extension machine with your back against the pad and your legs under the padded lever. Grip the handles for support and extend your legs until they are straight. Hold briefly at the top, then slowly lower back down. Equipment needed: leg extension machine.",
       "image": "img/exercises/leg-extension.jpg",
       "workout_type": "gym",
       "muscle_part": 6
