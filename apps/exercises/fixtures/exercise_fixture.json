@@ -103,7 +103,7 @@
     "pk": 10,
     "fields": {
       "name": "Dumbbell Lateral Raise",
-      "description": "Stand upright with a dumbbell in each hand, arms at your sides, and palms facing inward. Keep a slight bend in your elbows and raise your arms out to the sides until they are at shoulder level. Slowly lower the dumbbells back to the starting position. Equipment needed: pair of dumbbells.",
+      "description": "To perform this exercise you must stand upright with a dumbbell in each hand, arms at your sides, and palms facing inward. Keep a slight bend in your elbows and raise your arms out to the sides until they are at shoulder level. Slowly lower the dumbbells back to the starting position. Equipment needed: pair of dumbbells.",
       "image": "img/exercises/dumbbell-lateral-raise.jpg",
       "workout_type": "gym",
       "muscle_part": [11]
