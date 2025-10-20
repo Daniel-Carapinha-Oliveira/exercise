@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "name": "Whole Trapezius",
-      "body_part": 2
+      "muscle": 2
     }
   },
   {
