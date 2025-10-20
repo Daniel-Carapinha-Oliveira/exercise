@@ -35,7 +35,7 @@
     "model": "exercises.musclepart",
     "pk": 5,
     "fields": {
-      "name": "whole chest",
+      "name": "Upper chest",
       "muscle": 4
     }
   },
@@ -59,8 +59,8 @@
     "model": "exercises.musclepart",
     "pk": 8,
     "fields": {
-      "name": "whole shoulders",
-      "muscle": 6
+      "name": "Anterior head",
+      "muscle": 7
     }
   },
   {
@@ -68,7 +68,7 @@
     "pk": 9,
     "fields": {
       "name": "Long head",
-      "muscle": 6
+      "muscle": 8
     }
   },
   {
@@ -76,7 +76,7 @@
     "pk": 10,
     "fields": {
       "name": "Lateral head",
-      "muscle": 6
+      "muscle": 8
     }
   }
 ]

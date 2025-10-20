@@ -49,7 +49,7 @@
   },
   {
     "model": "exercises.muscle",
-    "pk": 8,
+    "pk": 7,
     "fields": {
       "name": "shoulders",
       "body_part": 5
@@ -57,7 +57,7 @@
   },
   {
     "model": "exercises.muscle",
-    "pk": 9,
+    "pk": 8,
     "fields": {
       "name": "triceps",
       "body_part": 6
