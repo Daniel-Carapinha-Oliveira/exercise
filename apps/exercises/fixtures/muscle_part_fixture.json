@@ -78,5 +78,13 @@
       "name": "Lateral head",
       "muscle": 8
     }
+  },
+  {
+    "model": "exercises.musclepart",
+    "pk": 11,
+    "fields": {
+      "name": "Lateral head",
+      "muscle": 7
+    }
   }
 ]

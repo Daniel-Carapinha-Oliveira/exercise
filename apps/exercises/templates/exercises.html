@@ -88,7 +88,13 @@
         <div class="col-sm-11 col-lg-6 mb-3">
             <div class="card">
                 <div class="card-header">
-                    <strong>Muscle part:</strong> {{ exercise.muscle_part }} | <strong>Exercise type:</strong> {{ exercise.workout_type }}
+                    <strong>Muscle part(s):</strong>
+                    {% for part in exercise.muscle_part.all %}
+                        {{ part.name }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        None
+                    {% endfor %}
+                    | <strong>Exercise type:</strong> {{ exercise.workout_type }}
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ exercise.name }}</h5>

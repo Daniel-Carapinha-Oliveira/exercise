@@ -105,10 +105,9 @@ class Exercise(models.Model):
         verbose_name='workout type',
     )
 
-    # ForeignKeys
-    muscle_part = models.ForeignKey(
+    # Many-to-many: An exercise can train multiple muscle parts
+    muscle_part = models.ManyToManyField(
         'exercises.MusclePart',
-        on_delete=models.PROTECT,
         related_name='exercises',
         verbose_name='muscle part',
     )
