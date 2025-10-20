@@ -3,9 +3,64 @@
     "model": "exercises.muscle",
     "pk": 1,
     "fields": {
-      "name": "Bicep",
-      "image": "img/muscles/biceps_1ozjpaD.webp",
+      "name": "Lats",
+      "body_part": 1
+    }
+  },
+  {
+    "model": "exercises.muscle",
+    "pk": 2,
+    "fields": {
+      "name": "Trapezius",
+      "body_part": 1
+    }
+  },
+  {
+    "model": "exercises.muscle",
+    "pk": 3,
+    "fields": {
+      "name": "Biceps",
       "body_part": 2
+    }
+  },
+  {
+    "model": "exercises.muscle",
+    "pk": 4,
+    "fields": {
+      "name": "Chest",
+      "body_part": 3
+    }
+  },
+  {
+    "model": "exercises.muscle",
+    "pk": 5,
+    "fields": {
+      "name": "Quadriceps",
+      "body_part": 4
+    }
+  },
+  {
+    "model": "exercises.muscle",
+    "pk": 6,
+    "fields": {
+      "name": "calves",
+      "body_part": 4
+    }
+  },
+  {
+    "model": "exercises.muscle",
+    "pk": 8,
+    "fields": {
+      "name": "shoulders",
+      "body_part": 4
+    }
+  },
+  {
+    "model": "exercises.muscle",
+    "pk": 9,
+    "fields": {
+      "name": "triceps",
+      "body_part": 4
     }
   }
 ]
