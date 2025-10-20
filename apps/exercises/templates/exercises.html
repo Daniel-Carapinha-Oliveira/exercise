@@ -107,6 +107,12 @@
                 </div>
             </div>
         </div>
+        {% empty %}
+        <div class="col-12 text-center mt-4">
+            <div class="alert alert-info" role="alert">
+                No exercises found in database.
+            </div>
+        </div>
         {% endfor %}
     </div>
     <!-- Pagination -->
