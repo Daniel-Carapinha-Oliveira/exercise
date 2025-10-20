@@ -12,7 +12,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 2,
     "fields": {
       "name": "T-Bar Row",
       "description": "description...",
@@ -23,7 +23,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 3,
     "fields": {
       "name": "Incline Dumbbell Curl",
       "description": "description...",
@@ -34,7 +34,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 4,
     "fields": {
       "name": "Incline Bench Press",
       "description": "description...",
@@ -45,7 +45,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 5,
     "fields": {
       "name": "Leg Extension",
       "description": "description...",
@@ -56,7 +56,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 6,
     "fields": {
       "name": "Seated Calf Raise",
       "description": "description...",
@@ -67,7 +67,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 7,
     "fields": {
       "name": "Military Press (AKA Overhead Press)",
       "description": "description...",
@@ -78,7 +78,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 8,
     "fields": {
       "name": "One-Arm Seated Overhead Tricep Extension",
       "description": "description...",
@@ -89,7 +89,7 @@
   },
   {
     "model": "exercises.exercise",
-    "pk": 1,
+    "pk": 9,
     "fields": {
       "name": "One-Arm Cable Tricep Extension",
       "description": "description...",
