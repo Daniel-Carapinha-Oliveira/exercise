@@ -97,5 +97,16 @@
       "workout_type": "gym",
       "muscle_part": [10]
     }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 10,
+    "fields": {
+      "name": "Dumbbell Lateral Raise",
+      "description": "Attach a single handle to a high pulley cable machine. Stand upright and hold the handle with one hand, keeping your elbow tucked by your side. Extend your arm downward until fully straight, then slowly return to the starting position. Equipment needed: cable machine with a single handle attachment.",
+      "image": "img/exercises/dumbbell-lateral-raise.jpg",
+      "workout_type": "gym",
+      "muscle_part": [11]
+    }
   }
 ]

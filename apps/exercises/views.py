@@ -26,6 +26,12 @@ class Exercises(FilterView):
     template_name = 'exercises.html'
     paginate_by = 2
 
+    def get_queryset(self):
+        # Start with the filtered queryset from ExerciseFilter
+        qs = super().get_queryset()
+        # Ensure distinct to avoid duplicates caused by ManyToMany joins
+        return qs.distinct().prefetch_related('muscle_part__muscle__body_part')
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Copy GET parameters and remove 'page' so it doesn't conflict with pagination
