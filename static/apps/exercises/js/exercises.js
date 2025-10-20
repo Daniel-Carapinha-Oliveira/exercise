@@ -97,6 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event handlers for changes in filter choices
   bodyPartSelect.addEventListener("change", () => {
+    // insert placeholder in muscle part
+    setSelectElementPlaceholder(musclePartSelect, "Choose a muscle first");
+
     const bodyPartId = bodyPartSelect.value;
     loadMuscles(bodyPartId);
   });
