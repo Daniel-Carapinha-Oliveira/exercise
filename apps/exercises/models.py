@@ -1,4 +1,5 @@
 from django.db import models
+from apps.core.mixins import MetaDataMixin
 
 
 class Muscle(models.Model):
@@ -79,7 +80,7 @@ class MusclePart(models.Model):
         return self.name
 
 
-class Exercise(models.Model):
+class Exercise(models.Model, MetaDataMixin):
     class WorkoutType(models.TextChoices):
         CALISTHENIC = 'calisthenics', 'Calisthenics'
         GYM = 'gym', 'Gym'
