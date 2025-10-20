@@ -52,7 +52,7 @@
     "pk": 8,
     "fields": {
       "name": "shoulders",
-      "body_part": 4
+      "body_part": 5
     }
   },
   {
@@ -60,7 +60,7 @@
     "pk": 9,
     "fields": {
       "name": "triceps",
-      "body_part": 4
+      "body_part": 6
     }
   }
 ]
