@@ -3,33 +3,99 @@
     "model": "exercises.exercise",
     "pk": 1,
     "fields": {
-      "name": "Bicep Curl",
-      "description": "This is the bicep curl exercise, consists of...",
-      "image": "img/exercises/bicep-curl.webp",
+      "name": "Lat Pull Down",
+      "description": "description...",
+      "image": "img/exercises/lat-pull-down.jpg",
       "workout_type": "gym",
       "muscle_part": 1
     }
   },
   {
     "model": "exercises.exercise",
-    "pk": 2,
+    "pk": 1,
     "fields": {
-      "name": "Bicep Hammer Curl",
-      "description": "This is the bicep curl exercise, consists of...",
-      "image": "img/exercises/bicep-hammer-curl.jpeg",
+      "name": "T-Bar Row",
+      "description": "description...",
+      "image": "img/exercises/t-bar-row.jpg",
       "workout_type": "gym",
-      "muscle_part": 1
+      "muscle_part": 2
     }
   },
   {
     "model": "exercises.exercise",
-    "pk": 3,
+    "pk": 1,
     "fields": {
-      "name": "Decline Bicep Curl",
-      "description": "This is the decline bicep curl... it consists of...",
-      "image": "img/exercises/decline_bicep_curl.jpg",
+      "name": "Incline Dumbbell Curl",
+      "description": "description...",
+      "image": "img/exercises/incline-dumbbell-curl-thumb.jpg",
       "workout_type": "gym",
-      "muscle_part": 1
+      "muscle_part": 3
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "Incline Bench Press",
+      "description": "description...",
+      "image": "img/exercises/incline-bench-press.jpg",
+      "workout_type": "gym",
+      "muscle_part": 5
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "Leg Extension",
+      "description": "description...",
+      "image": "img/exercises/leg-extension.jpg",
+      "workout_type": "gym",
+      "muscle_part": 6
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "Seated Calf Raise",
+      "description": "description...",
+      "image": "img/exercises/seated-calf-raise-1.jpg",
+      "workout_type": "gym",
+      "muscle_part": 7
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "Military Press (AKA Overhead Press)",
+      "description": "description...",
+      "image": "img/exercises/military-overhead-press.jpg",
+      "workout_type": "gym",
+      "muscle_part": 8
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "One-Arm Seated Overhead Tricep Extension",
+      "description": "description...",
+      "image": "img/exercises/one-arm-seated-overhead-tricep-extension.jpg",
+      "workout_type": "gym",
+      "muscle_part": 9
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "One-Arm Cable Tricep Extension",
+      "description": "description...",
+      "image": "img/exercises/one-arm-cable-tricep-extension.jpg",
+      "workout_type": "gym",
+      "muscle_part": 10
     }
   }
 ]
