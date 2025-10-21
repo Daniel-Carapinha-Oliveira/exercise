@@ -1,6 +1,6 @@
 [
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 1,
     "fields": {
       "name": "Back",
@@ -9,7 +9,7 @@
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 2,
     "fields": {
       "name": "Biceps",
@@ -18,7 +18,7 @@
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 3,
     "fields": {
       "name": "Chest",
@@ -27,7 +27,7 @@
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 4,
     "fields": {
       "name": "Legs",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 5,
     "fields": {
       "name": "Shoulders",
@@ -45,7 +45,7 @@
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 6,
     "fields": {
       "name": "Triceps",
