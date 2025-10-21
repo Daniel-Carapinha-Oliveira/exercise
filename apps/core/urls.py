@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import homepage
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+
+from .views import homepage
 
 urlpatterns = [
     path('', homepage, name='homepage'),
