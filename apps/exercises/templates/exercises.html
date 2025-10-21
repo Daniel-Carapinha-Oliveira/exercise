@@ -87,8 +87,8 @@
 <div class="container-fluid p-2">
     <div class="row justify-content-center">
         {% for exercise in page_obj %}
-        <div class="col-sm-11 col-lg-6 mb-3">
-            <div class="card">
+        <div class="col-sm-11 col-lg-6 mb-3 d-flex">
+            <div class="card flex-fill d-flex flex-column">
                 <div class="card-header">
                     <strong>Muscle part(s):</strong>
                     {% for part in exercise.muscle_part.all %}
@@ -98,14 +98,18 @@
                     {% endfor %}
                     | <strong>Exercise type:</strong> {{ exercise.workout_type }}
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{ exercise.name }}</h5>
-                    <p class="card-text">{{ exercise.description }}</p>
-                    <img src="{{ exercise.image.url }}" class="card-img-top"
-                         style="height: 300px; object-fit: contain;" alt="...">
-                    <p class="mt-2" style="font-size: 0.85rem; font-style: italic; color: #555;">
-                        Picture source: https://www.muscleandstrength.com/
-                    </p>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title text-center">{{ exercise.name }}</h5>
+                        <p class="card-text" style="text-align: justify;">{{ exercise.description }}</p>
+                    </div>
+                    <div class="mt-auto">
+                        <img src="{{ exercise.image.url }}" class="card-img-top"
+                             style="height: 300px; object-fit: contain;" alt="...">
+                        <p class="mt-2" style="font-size: 0.85rem; font-style: italic; color: #555;">
+                            Picture source: https://www.muscleandstrength.com/
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
