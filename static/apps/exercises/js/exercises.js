@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setSelectElementPlaceholder(muscleSelect, "Loading...", true);
 
-    fetch(`/api/muscles/?muscle_group=${MuscleGroupId}`)
+    fetch(`/get_muscles_queryset/?muscle_group=${MuscleGroupId}`)
       .then(res => res.json())
       .then(data => {
         if (data.length === 0) {
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setSelectElementPlaceholder(musclePartSelect, "Loading...", true);
 
-    fetch(`/api/muscle-parts/?muscle=${muscleId}`)
+    fetch(`/get_muscle_parts_queryset/?muscle=${muscleId}`)
       .then(res => res.json())
       .then(data => {
         if (data.length === 0) {

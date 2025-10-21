@@ -1,25 +1,38 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django_filters.views import FilterView
-from rest_framework.authentication import BasicAuthentication, SessionAuthentication
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.views import APIView
-from .serializers import ExerciseSerializer
-from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from apps.exercises.models import MuscleGroup, Exercise, Muscle, MusclePart
 
 from .filters import ExerciseFilter
-from apps.exercises.models import MuscleGroup, Exercise, Muscle, MusclePart
-from django.http import JsonResponse
+from .serializers import ExerciseSerializer
 
 
-def muscle_groups(request):
+def muscle_groups_page(request):
     all_muscle_groups = MuscleGroup.objects.all()
     return render(
         request,
         "muscle_groups.html",
         {'current_page': 'exercises', 'muscle_groups': all_muscle_groups}
     )
+
+
+def get_muscles_queryset(request):
+    muscle_group_id = request.GET.get('muscle_group')
+    muscles = Muscle.objects.filter(muscle_group_id=muscle_group_id).values('id', 'name')
+    return JsonResponse(list(muscles), safe=False)
+
+
+def get_muscle_parts_queryset(request):
+    muscle_id = request.GET.get('muscle')
+    parts = MusclePart.objects.filter(muscle_id=muscle_id).values('id', 'name')
+    return JsonResponse(list(parts), safe=False)
 
 
 class Exercises(FilterView):
@@ -42,18 +55,6 @@ class Exercises(FilterView):
         context['querystring'] = querydict.urlencode()
         context['current_page'] = 'exercises'
         return context
-
-
-def get_muscles(request):
-    muscle_group_id = request.GET.get('muscle_group')
-    muscles = Muscle.objects.filter(muscle_group_id=muscle_group_id).values('id', 'name')
-    return JsonResponse(list(muscles), safe=False)
-
-
-def get_muscle_parts(request):
-    muscle_id = request.GET.get('muscle')
-    parts = MusclePart.objects.filter(muscle_id=muscle_id).values('id', 'name')
-    return JsonResponse(list(parts), safe=False)
 
 
 @extend_schema(

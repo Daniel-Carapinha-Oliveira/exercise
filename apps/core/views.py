@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from exercise.version import __version__
 
 
