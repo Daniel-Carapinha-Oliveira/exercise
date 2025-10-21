@@ -87,8 +87,8 @@
 <div class="container-fluid p-2">
     <div class="row justify-content-center">
         {% for exercise in page_obj %}
-        <div class="col-sm-11 col-lg-6 mb-3">
-            <div class="card">
+        <div class="col-sm-11 col-lg-6 mb-3 d-flex">
+            <div class="card flex-fill d-flex flex-column">
                 <div class="card-header">
                     <strong>Muscle part(s):</strong>
                     {% for part in exercise.muscle_part.all %}
@@ -98,14 +98,20 @@
                     {% endfor %}
                     | <strong>Exercise type:</strong> {{ exercise.workout_type }}
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{ exercise.name }}</h5>
-                    <p class="card-text">{{ exercise.description }}</p>
-                    <img src="{{ exercise.image.url }}" class="card-img-top"
-                         style="height: 300px; object-fit: contain;" alt="...">
-                    <p class="mt-2" style="font-size: 0.85rem; font-style: italic; color: #555;">
-                        Picture source: https://www.muscleandstrength.com/
-                    </p>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title text-center">{{ exercise.name }}</h5>
+                        <p class="card-text mb-2" style="text-align: justify;">{{ exercise.description }}</p>
+                    </div>
+                    <div class="mt-auto text-center" style="margin-bottom: 0;">
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                            <img src="{{ exercise.image.url }}" class="card-img-top"
+                                 style="max-height: 300px; object-fit: contain; width: 100%;" alt="...">
+                            <p class="mb-0" style="font-size: 0.85rem; font-style: italic; color: #555;">
+                                Picture source: https://www.muscleandstrength.com/
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,40 +124,40 @@
         {% endfor %}
     </div>
     <!-- Pagination -->
-    <div class="d-flex justify-content-center align-items-center mt-1 gap-3">
+    <div class="d-flex flex-wrap justify-content-center align-items-center mt-1 gap-2 text-center">
 
         <!-- First Page Button -->
-        <div style="width: 90px;" class="text-center">
+        <div class="flex-shrink-0">
             {% if page_obj.has_previous %}
-            <a href="?{{ querystring }}&page=1" class="btn btn-primary">First</a>
+            <a href="?{{ querystring }}&page=1" class="btn btn-primary btn-sm">First</a>
             {% else %}
-            <span class="btn btn-primary invisible">First</span>
+            <span class="btn btn-primary btn-sm invisible">First</span>
             {% endif %}
         </div>
 
-        <div style="width: 90px;" class="text-center">
+        <div class="flex-shrink-0">
             {% if page_obj.has_previous %}
-            <a href="?{{ querystring }}&page={{ page_obj.previous_page_number }}" class="btn btn-primary">Previous</a>
+            <a href="?{{ querystring }}&page={{ page_obj.previous_page_number }}" class="btn btn-primary btn-sm">Previous</a>
             {% else %}
-            <span class="btn btn-primary invisible">Previous</span>
+            <span class="btn btn-primary btn-sm invisible">Previous</span>
             {% endif %}
         </div>
 
-        <span class="mx-3">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        <span class="mx-2 small">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
-        <div style="width: 90px;" class="text-center">
+        <div class="flex-shrink-0">
             {% if page_obj.has_next %}
-            <a href="?{{ querystring }}&page={{ page_obj.next_page_number }}" class="btn btn-primary">Next</a>
+            <a href="?{{ querystring }}&page={{ page_obj.next_page_number }}" class="btn btn-primary btn-sm">Next</a>
             {% else %}
-            <span class="btn btn-primary invisible">Next</span>
+            <span class="btn btn-primary btn-sm invisible">Next</span>
             {% endif %}
         </div>
 
-        <div style="width: 90px;" class="text-center">
+        <div class="flex-shrink-0">
             {% if page_obj.has_next %}
-            <a href="?{{ querystring }}&page={{ page_obj.paginator.num_pages }}" class="btn btn-primary">Last</a>
+            <a href="?{{ querystring }}&page={{ page_obj.paginator.num_pages }}" class="btn btn-primary btn-sm">Last</a>
             {% else %}
-            <span class="btn btn-primary invisible">Last</span>
+            <span class="btn btn-primary btn-sm invisible">Last</span>
             {% endif %}
         </div>
     </div>
