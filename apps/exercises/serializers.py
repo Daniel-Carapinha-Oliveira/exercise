@@ -10,19 +10,27 @@ class ExerciseSerializer(serializers.ModelSerializer):
         }
     )
 
-    muscle_part = serializers.CharField(
-        max_length=100,
-        required=True,
+    muscle_part = serializers.SlugRelatedField(
+        many=True,
+        queryset=MusclePart.objects.all(),
+        slug_field='name'
     )
+
+    created_by = serializers.StringRelatedField(read_only=True)
 
     class Meta:
         model = Exercise
         fields = '__all__'
 
     def validate_muscle_part(self, value):
-        names = list(MusclePart.objects.values_list('name', flat=True))
-        if value not in names:
+        model_names = list(MusclePart.objects.values_list('name', flat=True))
+        value_names = [object.name for object in value]
+
+        # Check if any value in value_names is not in model_names
+        invalid_names = [name for name in value_names if name not in model_names]
+
+        if invalid_names:
             raise serializers.ValidationError(
-                f'Choose one of following choices: {names}'
+                f'Must be a list of strings containing only the following: {list(model_names)}'
             )
         return value

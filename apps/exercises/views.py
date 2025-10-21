@@ -12,6 +12,7 @@ from .filters import ExerciseFilter
 from apps.exercises.models import BodyPart, Exercise, Muscle, MusclePart
 from django.http import JsonResponse
 
+
 def body_parts(request):
     all_body_parts = BodyPart.objects.all()
     return render(
@@ -19,6 +20,7 @@ def body_parts(request):
         "body_parts.html",
         {'current_page': 'exercises', 'body_parts': all_body_parts}
     )
+
 
 class Exercises(FilterView):
     model = Exercise
@@ -41,15 +43,18 @@ class Exercises(FilterView):
         context['current_page'] = 'exercises'
         return context
 
+
 def get_muscles(request):
     body_part_id = request.GET.get('body_part')
     muscles = Muscle.objects.filter(body_part_id=body_part_id).values('id', 'name')
     return JsonResponse(list(muscles), safe=False)
 
+
 def get_muscle_parts(request):
     muscle_id = request.GET.get('muscle')
     parts = MusclePart.objects.filter(muscle_id=muscle_id).values('id', 'name')
     return JsonResponse(list(parts), safe=False)
+
 
 @extend_schema(
     tags=['Exercises'],
@@ -69,15 +74,10 @@ class ExerciseAPIView(APIView):
     def post(self, request):
         serializer = ExerciseSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-
-        # get related muscle_part
-        muscle_part = MusclePart.objects.get(name=serializer.validated_data['muscle_part'])
-
         # save object
-        serializer.save(muscle_part=muscle_part)
+        serializer.save(created_by=request.user)
 
         return Response(
             serializer.data,
             status=status.HTTP_201_CREATED
         )
-

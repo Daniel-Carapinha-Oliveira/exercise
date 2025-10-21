@@ -57,7 +57,8 @@ class BodyPart(models.Model):
 class MusclePart(models.Model):
     name = models.CharField(
         verbose_name='name',
-        max_length=100
+        max_length=100,
+        unique=True,
     )
 
     # ForeignKeys
@@ -76,6 +77,11 @@ class MusclePart(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['muscle', 'name'], name='unique_together_muscle_name')
         ]
+
+    def save(self, *args, **kwargs):
+        # Prefix the name with the related muscle's name
+        self.name = f'{self.muscle.name} - {self.name}'
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
