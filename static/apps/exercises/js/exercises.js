@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Select elements
-  const bodyPartSelect = document.getElementById("id_body_part");
+  const muscleGroupSelect = document.getElementById("id_muscle_group");
   const muscleSelect = document.getElementById("id_muscle");
   const musclePartSelect = document.getElementById("id_muscle_part");
 
   // selected values in select elements
-  const selectedBodyPart = bodyPartSelect.value || null;
+  const selectedMuscleGroup = muscleGroupSelect.value || null;
   const selectedMuscle = muscleSelect.value || null;
   const selectedMusclePart = musclePartSelect.value || null;
 
@@ -20,17 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
     element.disabled = disabled_state;
   }
 
-  // --- Load muscles for selected body part ---
-  function loadMuscles(bodyPartId, selectedMuscleId = null) {
-    if (!bodyPartId) {
-      setSelectElementPlaceholder(muscleSelect, "Choose a body part first");
+  // --- Load muscles for selected muscle group ---
+  function loadMuscles(MuscleGroupId, selectedMuscleId = null) {
+    if (!MuscleGroupId) {
+      setSelectElementPlaceholder(muscleSelect, "Choose a muscle group first");
       setSelectElementPlaceholder(musclePartSelect, "Choose a muscle first");
       return;
     }
 
     setSelectElementPlaceholder(muscleSelect, "Loading...", true);
 
-    fetch(`/api/muscles/?body_part=${bodyPartId}`)
+    fetch(`/api/muscles/?muscle_group=${MuscleGroupId}`)
       .then(res => res.json())
       .then(data => {
         if (data.length === 0) {
@@ -96,12 +96,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event handlers for changes in filter choices
-  bodyPartSelect.addEventListener("change", () => {
+  muscleGroupSelect.addEventListener("change", () => {
     // insert placeholder in muscle part
     setSelectElementPlaceholder(musclePartSelect, "Choose a muscle first");
 
-    const bodyPartId = bodyPartSelect.value;
-    loadMuscles(bodyPartId);
+    const MuscleGroupId = muscleGroupSelect.value;
+    loadMuscles(MuscleGroupId);
   });
 
   muscleSelect.addEventListener("change", () => {
@@ -110,15 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // refresh values
-  if (selectedBodyPart) {
-    loadMuscles(selectedBodyPart, selectedMuscle);
+  if (selectedMuscleGroup) {
+    loadMuscles(selectedMuscleGroup, selectedMuscle);
     if (selectedMuscle) {
       loadMuscleParts(selectedMuscle, selectedMusclePart);
     } else {
       setSelectElementPlaceholder(musclePartSelect, "Choose a muscle first");
     }
   } else {
-    setSelectElementPlaceholder(muscleSelect, "Choose a body part first");
+    setSelectElementPlaceholder(muscleSelect, "Choose a muscle group first");
     setSelectElementPlaceholder(musclePartSelect, "Choose a muscle first");
   }
 });

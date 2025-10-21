@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('body_parts', views.body_parts, name='body_parts'),
+    path('muscle_groups', views.muscle_groups, name='muscle_groups'),
     path('exercises', views.Exercises.as_view(), name='exercises'),
     path('api/muscles/', views.get_muscles, name='api_muscles'),
     path('api/muscle-parts/', views.get_muscle_parts, name='api_muscle_parts'),

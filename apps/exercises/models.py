@@ -3,32 +3,7 @@ from django.db.models import Q
 from apps.core.mixins import MetaDataMixin
 
 
-class Muscle(models.Model):
-    name = models.CharField(
-        verbose_name='name',
-        max_length=100,
-        unique=True,
-    )
-
-    # ForeignKeys
-    body_part = models.ForeignKey(
-        'exercises.BodyPart',
-        on_delete=models.PROTECT,
-        related_name='muscles',
-        verbose_name='body part',
-    )
-
-    class Meta:
-        db_table = 'muscle'
-        ordering = ['name']
-        verbose_name = 'muscle'
-        verbose_name_plural = 'muscles'
-
-    def __str__(self):
-        return self.name
-
-
-class BodyPart(models.Model):
+class MuscleGroup(models.Model):
     name = models.CharField(
         verbose_name='name',
         max_length=100,
@@ -37,7 +12,7 @@ class BodyPart(models.Model):
 
     image = models.ImageField(
         verbose_name='image',
-        upload_to='img/body_parts/'
+        upload_to='img/muscle_groups/'
     )
 
     description = models.TextField(
@@ -45,10 +20,35 @@ class BodyPart(models.Model):
     )
 
     class Meta:
-        db_table = 'body_part'
+        db_table = 'muscle_group'
         ordering = ['name']
-        verbose_name = 'body part'
-        verbose_name_plural = 'body parts'
+        verbose_name = 'muscle group'
+        verbose_name_plural = 'muscle groups'
+
+    def __str__(self):
+        return self.name
+
+
+class Muscle(models.Model):
+    name = models.CharField(
+        verbose_name='name',
+        max_length=100,
+        unique=True,
+    )
+
+    # ForeignKeys
+    muscle_group = models.ForeignKey(
+        'exercises.MuscleGroup',
+        on_delete=models.PROTECT,
+        related_name='muscles',
+        verbose_name='muscle group',
+    )
+
+    class Meta:
+        db_table = 'muscle'
+        ordering = ['name']
+        verbose_name = 'muscle'
+        verbose_name_plural = 'muscles'
 
     def __str__(self):
         return self.name

@@ -1,5 +1,5 @@
 import django_filters
-from .models import Exercise, BodyPart, Muscle, MusclePart
+from .models import Exercise, MuscleGroup, Muscle, MusclePart
 
 
 class ExerciseFilter(django_filters.FilterSet):
@@ -11,11 +11,11 @@ class ExerciseFilter(django_filters.FilterSet):
         empty_label="-----------"
     )
 
-    body_part = django_filters.ModelChoiceFilter(
-        queryset=BodyPart.objects.all(),
-        field_name='muscle_part__muscle__body_part',
+    muscle_group = django_filters.ModelChoiceFilter(
+        queryset=MuscleGroup.objects.all(),
+        field_name='muscle_part__muscle__muscle_group',
         to_field_name='id',
-        label='Body Part',
+        label='Muscle Group',
         empty_label="-----------"
     )
 
@@ -37,15 +37,15 @@ class ExerciseFilter(django_filters.FilterSet):
 
     class Meta:
         model = Exercise
-        fields = ['name', 'description', 'workout_type', 'body_part', 'muscle', 'muscle_part']
+        fields = ['name', 'description', 'workout_type', 'muscle_group', 'muscle', 'muscle_part']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # Dynamically populate muscles if body_part is selected
-        body_part = self.data.get('body_part')
-        if body_part:
-            self.filters['muscle'].queryset = Muscle.objects.filter(body_part_id=body_part)
+        # Dynamically populate muscles if muscle_group is selected
+        muscle_group = self.data.get('muscle_group')
+        if muscle_group:
+            self.filters['muscle'].queryset = Muscle.objects.filter(muscle_group_id=muscle_group)
 
         # Dynamically populate muscle parts if muscle is selected
         muscle = self.data.get('muscle')

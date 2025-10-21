@@ -1,55 +1,55 @@
 [
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 1,
     "fields": {
       "name": "Back",
-      "image": "img/body_parts/back.jpg",
+      "image": "img/muscle_groups/back.jpg",
       "description": "The back includes major muscles like the latissimus dorsi, trapezius, and erector spinae. Strengthening your back improves posture, supports spinal health, and enhances overall upper-body strength."
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 2,
     "fields": {
       "name": "Biceps",
-      "image": "img/body_parts/bicep.jpg",
+      "image": "img/muscle_groups/bicep.jpg",
       "description": "The biceps brachii, located on the front of the upper arm, is key for arm flexion and lifting. Training your biceps improves arm strength, grip, and overall upper-body aesthetics."
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 3,
     "fields": {
       "name": "Chest",
-      "image": "img/body_parts/chest.jpg",
+      "image": "img/muscle_groups/chest.jpg",
       "description": "The chest is made up of the pectoralis major and minor muscles. A strong chest enhances pushing strength, supports proper posture, and adds power to many upper-body movements."
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 4,
     "fields": {
       "name": "Legs",
-      "image": "img/body_parts/legs.jpg",
+      "image": "img/muscle_groups/legs.jpg",
       "description": "Leg muscles, including the quadriceps, hamstrings, glutes, and calves, are essential for mobility, stability, and strength. Training legs improves balance, athletic performance, and overall body functionality."
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 5,
     "fields": {
       "name": "Shoulders",
-      "image": "img/body_parts/shoulders.jpg",
+      "image": "img/muscle_groups/shoulders.jpg",
       "description": "The shoulder muscles, including the deltoids and rotator cuff, are crucial for lifting, rotation, and overall upper-body strength. Strong shoulders improve posture, stability, and performance in daily and athletic activities."
     }
   },
   {
-    "model": "exercises.bodypart",
+    "model": "exercises.musclegroup",
     "pk": 6,
     "fields": {
       "name": "Triceps",
-      "image": "img/body_parts/triceps.jpg",
+      "image": "img/muscle_groups/triceps.jpg",
       "description": "The triceps brachii, located at the back of the upper arm, is responsible for elbow extension. Strengthening your triceps enhances pushing movements, arm stability, and overall upper-body strength."
     }
   }

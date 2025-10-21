@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "Lats",
-      "body_part": 1
+      "muscle_group": 1
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "name": "Trapezius",
-      "body_part": 1
+      "muscle_group": 1
     }
   },
   {
@@ -20,7 +20,7 @@
     "pk": 3,
     "fields": {
       "name": "Biceps",
-      "body_part": 2
+      "muscle_group": 2
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 4,
     "fields": {
       "name": "Chest",
-      "body_part": 3
+      "muscle_group": 3
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 5,
     "fields": {
       "name": "Quadriceps",
-      "body_part": 4
+      "muscle_group": 4
     }
   },
   {
@@ -44,7 +44,7 @@
     "pk": 6,
     "fields": {
       "name": "Calves",
-      "body_part": 4
+      "muscle_group": 4
     }
   },
   {
@@ -52,7 +52,7 @@
     "pk": 7,
     "fields": {
       "name": "Shoulders",
-      "body_part": 5
+      "muscle_group": 5
     }
   },
   {
@@ -60,7 +60,7 @@
     "pk": 8,
     "fields": {
       "name": "Triceps",
-      "body_part": 6
+      "muscle_group": 6
     }
   }
 ]

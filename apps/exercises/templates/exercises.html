@@ -42,12 +42,12 @@
                         </select>
                     </div>
                     <div class="col-12 col-md-auto">
-                        <label for="id_body_part" class="form-label">Body part</label>
-                        <select name="body_part" id="id_body_part" class="form-select">
-                            {% for value, label in filter.form.body_part.field.choices %}
+                        <label for="id_muscle_group" class="form-label">Muscle group</label>
+                        <select name="muscle_group" id="id_muscle_group" class="form-select">
+                            {% for value, label in filter.form.muscle_group.field.choices %}
                             <option
                                     value="{{ value }}"
-                                    {% if filter.form.body_part.value == value|stringformat:"s" %}
+                                    {% if filter.form.muscle_group.value == value|stringformat:"s" %}
                             selected{% endif %}>{{ label }}</option>
                             {% endfor %}
                         </select>

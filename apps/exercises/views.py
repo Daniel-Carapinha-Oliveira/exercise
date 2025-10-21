@@ -9,16 +9,16 @@ from drf_spectacular.utils import extend_schema
 from rest_framework import status
 
 from .filters import ExerciseFilter
-from apps.exercises.models import BodyPart, Exercise, Muscle, MusclePart
+from apps.exercises.models import MuscleGroup, Exercise, Muscle, MusclePart
 from django.http import JsonResponse
 
 
-def body_parts(request):
-    all_body_parts = BodyPart.objects.all()
+def muscle_groups(request):
+    all_muscle_groups = MuscleGroup.objects.all()
     return render(
         request,
-        "body_parts.html",
-        {'current_page': 'exercises', 'body_parts': all_body_parts}
+        "muscle_groups.html",
+        {'current_page': 'exercises', 'muscle_groups': all_muscle_groups}
     )
 
 
@@ -32,7 +32,7 @@ class Exercises(FilterView):
         # Start with the filtered queryset from ExerciseFilter
         qs = super().get_queryset()
         # Ensure distinct to avoid duplicates caused by ManyToMany joins
-        return qs.distinct().prefetch_related('muscle_part__muscle__body_part')
+        return qs.distinct().prefetch_related('muscle_part__muscle__muscle_group')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -45,8 +45,8 @@ class Exercises(FilterView):
 
 
 def get_muscles(request):
-    body_part_id = request.GET.get('body_part')
-    muscles = Muscle.objects.filter(body_part_id=body_part_id).values('id', 'name')
+    muscle_group_id = request.GET.get('muscle_group')
+    muscles = Muscle.objects.filter(muscle_group_id=muscle_group_id).values('id', 'name')
     return JsonResponse(list(muscles), safe=False)
 
 
