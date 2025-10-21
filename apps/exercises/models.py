@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import Q
+from apps.core.mixins import MetaDataMixin
 
 
 class Muscle(models.Model):
@@ -55,7 +57,8 @@ class BodyPart(models.Model):
 class MusclePart(models.Model):
     name = models.CharField(
         verbose_name='name',
-        max_length=100
+        max_length=100,
+        unique=True,
     )
 
     # ForeignKeys
@@ -75,19 +78,23 @@ class MusclePart(models.Model):
             models.UniqueConstraint(fields=['muscle', 'name'], name='unique_together_muscle_name')
         ]
 
+    def save(self, *args, **kwargs):
+        # Prefix the name with the related muscle's name
+        self.name = f'{self.muscle.name} - {self.name}'
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 
 
-class Exercise(models.Model):
+class Exercise(MetaDataMixin, models.Model):
     class WorkoutType(models.TextChoices):
         CALISTHENIC = 'calisthenics', 'Calisthenics'
         GYM = 'gym', 'Gym'
 
     name = models.CharField(
         verbose_name='name',
-        max_length=100,
-        unique=True,
+        max_length=100
     )
 
     description = models.TextField(
@@ -117,6 +124,14 @@ class Exercise(models.Model):
         ordering = ['name']
         verbose_name = 'exercise'
         verbose_name_plural = 'exercises'
+        # name must be unique only for rows where deleted_by is null
+        constraints = [
+            models.UniqueConstraint(
+                fields=['name'],
+                condition=Q(deleted_by__isnull=True),
+                name='unique_exercise_name_if_not_deleted'
+            )
+        ]
 
     def __str__(self):
         return self.name

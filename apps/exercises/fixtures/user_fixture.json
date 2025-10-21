@@ -1,0 +1,16 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "fixture_user",
+      "password": "pbkdf2_sha256$260000$3c8gWlNxgq9K$uI9eS5bD7e/OZMTUMv0GrXbc4d0uR4N/q0NjN0vYj84=",
+      "email": "admin@example.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "first_name": "Fixture",
+      "last_name": "User"
+    }
+  }
+]

@@ -3,7 +3,7 @@
     "model": "exercises.musclepart",
     "pk": 1,
     "fields": {
-      "name": "Whole muscle",
+      "name": "Lats - Whole muscle",
       "muscle": 1
     }
   },
@@ -11,7 +11,7 @@
     "model": "exercises.musclepart",
     "pk": 2,
     "fields": {
-      "name": "Whole Trapezius",
+      "name": "Trapezius - Whole Trapezius",
       "muscle": 2
     }
   },
@@ -19,7 +19,7 @@
     "model": "exercises.musclepart",
     "pk": 3,
     "fields": {
-      "name": "Long head",
+      "name": "Biceps - Long head",
       "muscle": 3
     }
   },
@@ -27,7 +27,7 @@
     "model": "exercises.musclepart",
     "pk": 4,
     "fields": {
-      "name": "Short head",
+      "name": "Biceps - Short head",
       "muscle": 3
     }
   },
@@ -35,7 +35,7 @@
     "model": "exercises.musclepart",
     "pk": 5,
     "fields": {
-      "name": "Upper chest",
+      "name": "Chest - Upper chest",
       "muscle": 4
     }
   },
@@ -43,7 +43,7 @@
     "model": "exercises.musclepart",
     "pk": 6,
     "fields": {
-      "name": "whole quadriceps",
+      "name": "Quadriceps - whole quadriceps",
       "muscle": 5
     }
   },
@@ -51,7 +51,7 @@
     "model": "exercises.musclepart",
     "pk": 7,
     "fields": {
-      "name": "whole calves",
+      "name": "Calves - whole calves",
       "muscle": 6
     }
   },
@@ -59,7 +59,7 @@
     "model": "exercises.musclepart",
     "pk": 8,
     "fields": {
-      "name": "Anterior head",
+      "name": "Shoulders - Anterior head",
       "muscle": 7
     }
   },
@@ -67,7 +67,7 @@
     "model": "exercises.musclepart",
     "pk": 9,
     "fields": {
-      "name": "Long head",
+      "name": "Triceps - Long head",
       "muscle": 8
     }
   },
@@ -75,7 +75,7 @@
     "model": "exercises.musclepart",
     "pk": 10,
     "fields": {
-      "name": "Lateral head",
+      "name": "Triceps - Lateral head",
       "muscle": 8
     }
   },
@@ -83,7 +83,7 @@
     "model": "exercises.musclepart",
     "pk": 11,
     "fields": {
-      "name": "Lateral head",
+      "name": "Shoulders - Lateral head",
       "muscle": 7
     }
   }
