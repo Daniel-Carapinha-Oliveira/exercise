@@ -12,7 +12,7 @@ while true; do
 done
 
 while true; do
-  python manage.py loaddata user_fixture.json body_part_fixture.json muscle_fixture.json muscle_part_fixture.json exercise_fixture.json
+  python manage.py loaddata user_fixture.json muscle_group_fixture.json muscle_fixture.json muscle_part_fixture.json exercise_fixture.json
   if [[ "$?" == "0" ]]; then
     break
   fi
