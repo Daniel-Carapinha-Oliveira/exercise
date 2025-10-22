@@ -8,7 +8,7 @@ User = get_user_model()
 pytestmark = pytest.mark.django_db
 
 
-class TestGetDeletedUser:
+class TestGetDeletedUserHelper:
     def test_user_does_not_exist_function_must_create_it(self):
         user = User.objects.filter(username="deleted_user").first()
         assert user is None

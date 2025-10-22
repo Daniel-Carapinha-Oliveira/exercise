@@ -11,7 +11,7 @@ User = get_user_model()
 pytestmark = pytest.mark.django_db
 
 
-class TestMetaDataMixin:
+class TestMetaDataMixinMixin:
     class NewModelForTesting(MetaDataMixin, models.Model):
         class Meta:
             app_label = 'core'
