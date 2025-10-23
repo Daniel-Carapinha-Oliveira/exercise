@@ -4,6 +4,17 @@ from .models import Exercise, MuscleGroup, Muscle, MusclePart
 
 
 class ExerciseFilter(django_filters.FilterSet):
+    """
+    Provides filtering options for the Exercise model, allowing users to filter
+    exercises based on various attributes such as name, description, workout type,
+    muscle group, muscle, and muscle part.
+
+    Receives the filter data (typically from a GET request). Dynamically adjusts
+    the available choices for muscles and muscle parts based on the selected
+    muscle group and muscle.
+
+    Returns a filtered queryset of Exercise objects matching the applied filters.
+    """
     name = django_filters.CharFilter(lookup_expr='icontains')
     description = django_filters.CharFilter(lookup_expr='icontains')
 

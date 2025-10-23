@@ -4,6 +4,15 @@ from .models import Exercise, MusclePart
 
 
 class ExerciseSerializer(serializers.ModelSerializer):
+    """
+    Serializes and deserializes Exercise model instances for API input and output.
+    Handles validation and representation of exercise-related data.
+
+    Receives Exercise model data and ensures proper validation, particularly for
+    the muscle_part field, which must reference valid (existing) MusclePart (model) names.
+
+    Returns validated and serialized Exercise data.
+    """
     workout_type = serializers.ChoiceField(
         choices=Exercise.WorkoutType.choices,
         error_messages={
