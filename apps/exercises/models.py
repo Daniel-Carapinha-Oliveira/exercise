@@ -79,11 +79,6 @@ class MusclePart(models.Model):
             models.UniqueConstraint(fields=['muscle', 'name'], name='unique_together_muscle_name')
         ]
 
-    def save(self, *args, **kwargs):
-        # Prefix the name with the related muscle's name
-        self.name = f'{self.muscle.name} - {self.name}'
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return self.name
 

@@ -42,9 +42,11 @@ class ExerciseFactory(factory.django.DjangoModelFactory):
         filename=factory.Sequence(lambda n: f'exercise_{n}.jpg')
     )
     workout_type = factory.Iterator([Exercise.WorkoutType.CALISTHENIC, Exercise.WorkoutType.GYM])
+    created_by = factory.SubFactory('apps.core.factories.UserFactory')
 
     class Meta:
         model = Exercise
+        skip_postgeneration_save = True
 
     @factory.post_generation
     def muscle_part(self, create, extracted, **kwargs):
