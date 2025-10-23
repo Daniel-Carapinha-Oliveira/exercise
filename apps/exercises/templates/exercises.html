@@ -10,7 +10,7 @@
 
     <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#filterCard"
             aria-expanded="false" aria-controls="filterCard">
-        Toggle Filters
+        Filters
     </button>
 
     <div class="collapse my-3 mx-auto" style="width: 100%;" id="filterCard">
@@ -143,7 +143,7 @@
             {% endif %}
         </div>
 
-        <span class="mx-2 small">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        <span class="mx-2 small" style="color: black;">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
         <div class="flex-shrink-0">
             {% if page_obj.has_next %}

@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Load muscles for selected muscle group ---
   function loadMuscles(MuscleGroupId, selectedMuscleId = null) {
+  // for when user selects "Not selected" option
     if (!MuscleGroupId) {
       setSelectElementPlaceholder(muscleSelect, "Choose a muscle group first");
       setSelectElementPlaceholder(musclePartSelect, "Choose a muscle first");
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Load muscle parts for selected muscle ---
   function loadMuscleParts(muscleId, selectedPartId = null) {
+  // for when user selects "Not selected" option
     if (!muscleId) {
       setSelectElementPlaceholder(musclePartSelect, "Choose a muscle first");
       return;
