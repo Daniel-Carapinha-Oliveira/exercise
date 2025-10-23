@@ -126,14 +126,14 @@ class ExerciseAPIView(APIView):
         http_method_names: Restricts allowed HTTP methods to 'get' and 'post'.
 
     Methods:
-        get(request):
-            Retrieves all Exercise objects from the database and returns them
-            serialized as a list of ExerciseSerializer objects in the response.
+    - get:
+        Retrieves all Exercise objects from the database and returns them
+        serialized as a list of ExerciseSerializer objects in the response.
 
-        post(request):
-            Accepts new Exercise data in the request body, validates it using
-            ExerciseSerializer, saves it with the currently authenticated user
-            as 'created_by', and returns the serialized object with HTTP 201 status.
+    - post:
+        Accepts new Exercise data in the request body, validates it using
+        ExerciseSerializer, saves it with the currently authenticated user
+        as 'created_by', and returns the serialized object with HTTP 201 status.
     """
     authentication_classes = [BasicAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
