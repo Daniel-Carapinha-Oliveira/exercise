@@ -11,6 +11,7 @@ services:
     volumes:
       - static_volume:/exercise/exercise/staticfiles
       - media_volume:/exercise/exercise/media
+      - logs_volume:/exercise/logs
     networks:
       - network
 
@@ -47,6 +48,7 @@ volumes:
   media_volume:
   caddy_data:
   caddy_config:
+  logs_volume:
   pgdb-data:
     driver: local
 

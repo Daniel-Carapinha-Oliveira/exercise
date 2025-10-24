@@ -23,8 +23,11 @@ RUN sed -i 's/\r$//g' bin/*
 
 RUN chmod +x bin/*
 
+RUN mkdir -p /exercise/logs
+
 # Change ownership of the application folder to the new user
 RUN chown -R appuser:appgroup /exercise
+RUN chown -R appuser:appgroup /exercise/logs
 
 # Switch to the non-root user
 USER appuser

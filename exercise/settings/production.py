@@ -4,7 +4,7 @@ from pathlib import Path
 
 from exercise.settings.base import *
 
-LOGS_DIR = Path(__file__).resolve().parent.parent / "logs"
+LOGS_DIR = Path("/exercise/logs")
 LOGS_DIR.mkdir(parents=True, exist_ok=True)  # create folder if it doesn't exist
 LOG_FILE = LOGS_DIR / "django.log"
 
