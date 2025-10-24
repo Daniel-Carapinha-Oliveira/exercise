@@ -1,0 +1,17 @@
+localhost:80 {
+    handle /static/* {
+        root * /exercise/exercise/staticfiles
+        uri strip_prefix /static
+        file_server
+    }
+
+    handle /media/* {
+        root * /exercise/exercise/media
+        uri strip_prefix /media
+        file_server
+    }
+
+    handle {
+        reverse_proxy exercise:8000
+    }
+}

@@ -3,19 +3,20 @@ services:
     restart: unless-stopped
     build: .
     image: exercise:latest
-    ports:
-      - '8000:8000'
     container_name: exercise
     command: ./bin/boot_exercise.sh
     env_file: ./env/exercise.env
     depends_on:
       - db
+    volumes:
+      - static_volume:/exercise/exercise/staticfiles
+      - media_volume:/exercise/exercise/media
     networks:
       - network
 
   db:
     restart: unless-stopped
-    image: postgres
+    image: postgres:17
     container_name: exercise_db
     env_file: ./env/exercise_db.env
     volumes:
@@ -23,7 +24,29 @@ services:
     networks:
       - network
 
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+      - static_volume:/exercise/exercise/staticfiles
+      - media_volume:/exercise/exercise/media
+    networks:
+      - network
+    depends_on:
+      - exercise
+
 volumes:
+  static_volume:
+  media_volume:
+  caddy_data:
+  caddy_config:
   pgdb-data:
     driver: local
 
