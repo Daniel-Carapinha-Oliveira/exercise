@@ -1,5 +1,8 @@
 FROM python:3.12-alpine
 
+# Create a non-root user and group
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
 WORKDIR /exercise
 
 RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev libffi-dev
@@ -19,5 +22,11 @@ COPY . /exercise
 RUN sed -i 's/\r$//g' bin/*
 
 RUN chmod +x bin/*
+
+# Change ownership of the application folder to the new user
+RUN chown -R appuser:appgroup /exercise
+
+# Switch to the non-root user
+USER appuser
 
 EXPOSE 8000
