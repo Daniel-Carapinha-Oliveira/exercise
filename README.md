@@ -149,7 +149,7 @@ The app is currently up at: ....................................................
 
 - Use the following command in CMD: **docker-compose build && docker-compose up -d**
 - The app comes preloaded with data via fixtures that get loaded via the docker-compose process, so you can jump right
-  into testing the app.
+  into testing the app. ++++++++++++++++++++++++++++++++++++++FIXTURES NO LONGER AUTO.
 
 ---
 
