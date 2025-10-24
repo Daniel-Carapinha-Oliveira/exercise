@@ -11,7 +11,6 @@ services:
     volumes:
       - static_volume:/exercise/exercise/staticfiles
       - media_volume:/exercise/exercise/media
-      - ./logs:/exercise/logs
     networks:
       - network
 
