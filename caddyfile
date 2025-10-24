@@ -1,4 +1,4 @@
-localhost:80 {
+72.61.166.240:80 {
     handle /static/* {
         root * /exercise/exercise/staticfiles
         uri strip_prefix /static
