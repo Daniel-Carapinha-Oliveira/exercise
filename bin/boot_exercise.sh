@@ -1,5 +1,14 @@
 #!/bin/sh
 
+mkdir -p /exercise/logs
+touch /exercise/logs/django.log
+chown -R appuser:appgroup /exercise/logs
+chmod 664 /exercise/logs/django.log
+
+# Fix ownership for volumes (needed on Linux)
+chown -R appuser:appgroup /exercise/exercise/staticfiles
+chown -R appuser:appgroup /exercise/exercise/media
+
 python manage.py collectstatic --noinput
 
 while true; do
@@ -11,7 +20,8 @@ while true; do
   sleep 5
 done
 
-uwsgi \
+# run uwsgi as app user
+exec su-exec appuser:appgroup uwsgi \
   --http 0.0.0.0:8000 \
   --module exercise.wsgi \
   --master \
