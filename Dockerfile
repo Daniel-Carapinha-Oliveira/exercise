@@ -12,8 +12,8 @@ RUN pip install uwsgi
 COPY requirements/base.txt base.txt
 COPY requirements/production.txt production.txt
 
-RUN mkdir -p /exercise/media/img/
-COPY static/imgs /exercise/media/img/
+RUN mkdir -p /exercise/exercise/media/img/
+COPY static/imgs /exercise/exercise/media/img/
 
 RUN pip install -r production.txt
 
