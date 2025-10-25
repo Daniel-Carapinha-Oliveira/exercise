@@ -1,5 +1,7 @@
 # About this repository
 
+The application is live and accessible at https://thebestexerciseapp.com/. Feel free to explore its features.
+
 The "exercise" app is a Django-based web application that helps users explore exercises for their workout
 routines. It provides a user-friendly interface to browse exercises by muscle group, filter by criteria, and view
 detailed information. The app also provides REST APIs for access and data creation.
@@ -18,8 +20,6 @@ Key production features include:
 - Service separation for app, database, and web server/reverse proxy;
 - Manage secrets securely.
 - Logging and deployment readiness.
-
-The application is live and accessible at https://thebestexerciseapp.com/. Feel free to explore its features.
 
 ---
 
