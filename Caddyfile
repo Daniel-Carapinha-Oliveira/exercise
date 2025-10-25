@@ -1,4 +1,4 @@
-{$PUBLIC_IP_OR_DOMAIN_NAME}:80 {
+{$PUBLIC_IP_OR_DOMAIN_NAME} {
     handle /static/* {
         root * /exercise/exercise/staticfiles
         uri strip_prefix /static
