@@ -4,6 +4,13 @@ from pathlib import Path
 
 from exercise.settings.base import *
 
+# Force HTTPS
+SECURE_SSL_REDIRECT = True
+
+# Cookies only sent over HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 LOGS_DIR = Path("/exercise/logs")
 LOGS_DIR.mkdir(parents=True, exist_ok=True)  # create folder if it doesn't exist
 LOG_FILE = LOGS_DIR / "django.log"
