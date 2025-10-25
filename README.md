@@ -5,11 +5,11 @@ routines. It provides a user-friendly interface to browse exercises by muscle gr
 detailed information. The app also provides REST APIs for access and data creation.
 
 This project demonstrates skills in Python (OOP), Django development, project design, database design, REST API design,
-Docker containerization, and frontend development (html, javascript) and integration. I built a production-ready web
-application fully containerized with Docker and orchestrated using Docker Compose. It connects to a PostgreSQL database
-and is served through Caddy, which handles static file serving, reverse proxying, and HTTPS. The project demonstrates
-expertise in CI/CD practices, including version control (Git/GitHub), containerization (Docker), and automated testing
-frameworks.
+Docker containerization, frontend development (html, javascript) and integration, as well as proficiency in working with 
+Linux servers and understanding their underlying logic and operations. I built a production-ready web application fully 
+containerized with Docker and orchestrated using Docker Compose. It connects to a PostgreSQL database and is served 
+through Caddy, which handles static file serving, reverse proxying, and HTTPS. The project demonstrates expertise in 
+CI/CD practices, including version control (Git/GitHub), containerization (Docker), and automated testing frameworks.
 
 Key production features include:
 
@@ -162,7 +162,7 @@ The tech stack used for this project is the following:
         - caddy.env:
             - DOMAIN_NAME= your domain name.
 
-- Use the following command in CMD: **docker-compose build && docker-compose up -d**
+- Use the following command in CMD: **docker compose build && docker compose up -d**
 
 - Note: The app comes preloaded with sample data that you can use immediately after deployment. To load the fixtures,
   simply run the following command in the "exercise" docker container:
