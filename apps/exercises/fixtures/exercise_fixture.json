@@ -4,10 +4,12 @@
     "pk": 1,
     "fields": {
       "name": "Lat Pull Down",
-      "description": "Sit at a lat pulldown machine and grasp the bar with a wide overhand grip. Keep your chest up and pull the bar down toward your upper chest, squeezing your shoulder blades together. Slowly return the bar to the starting position with control. Equipment needed: lat pulldown machine and cable attachment.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
       "image": "img/exercises/lat-pull-down.jpg",
       "workout_type": "gym",
-      "muscle_part": [1],
+      "muscle_part": [
+        1
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -16,11 +18,13 @@
     "model": "exercises.exercise",
     "pk": 2,
     "fields": {
-      "name": "T-Bar Row",
-      "description": "Stand with your feet shoulder-width apart and a slight bend in your knees. Lean forward at the hips while keeping your back straight. Grip the T-bar handles and pull the weight toward your torso, squeezing your back muscles at the top. Lower the weight under control. Equipment needed: T-bar row machine or landmine attachment with a barbell.",
-      "image": "img/exercises/t-bar-row.jpg",
+      "name": "One Arm Dumbbell Row",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/one-arm-dumbbell-row.jpg",
       "workout_type": "gym",
-      "muscle_part": [2],
+      "muscle_part": [
+        1
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -29,11 +33,13 @@
     "model": "exercises.exercise",
     "pk": 3,
     "fields": {
-      "name": "Incline Dumbbell Curl",
-      "description": "Sit on an incline bench set to about 45 degrees. Hold a dumbbell in each hand with your arms hanging straight down and palms facing forward. Curl the dumbbells toward your shoulders while keeping your upper arms stationary. Lower slowly to the starting position. Equipment needed: incline bench and dumbbells.",
-      "image": "img/exercises/incline-dumbbell-curl-thumb.jpg",
+      "name": "Bent Over Row",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/bent-over-row.jpg",
       "workout_type": "gym",
-      "muscle_part": [3],
+      "muscle_part": [
+        1
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -42,11 +48,13 @@
     "model": "exercises.exercise",
     "pk": 4,
     "fields": {
-      "name": "Incline Bench Press",
-      "description": "Lie back on an incline bench set to 30–45 degrees. Grip the barbell slightly wider than shoulder-width. Lower the bar slowly to your upper chest, then press it upward until your arms are fully extended. Keep your feet flat and your core tight throughout. Equipment needed: incline bench and barbell (or dumbbells as an alternative).",
-      "image": "img/exercises/incline-bench-press.jpg",
+      "name": "Bent Over Dumbbell Row",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/bent-over-dumbbell-row-1.jpg",
       "workout_type": "gym",
-      "muscle_part": [5],
+      "muscle_part": [
+        1
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -55,11 +63,13 @@
     "model": "exercises.exercise",
     "pk": 5,
     "fields": {
-      "name": "Leg Extension",
-      "description": "To perform this exercise you must sit on a leg extension machine with your back against the pad and your legs under the padded lever. Grip the handles for support and extend your legs until they are straight. Hold briefly at the top, then slowly lower back down. Equipment needed: leg extension machine.",
-      "image": "img/exercises/leg-extension.jpg",
+      "name": "Seated Cable Row",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/seated-cable-row.jpg",
       "workout_type": "gym",
-      "muscle_part": [6],
+      "muscle_part": [
+        1
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -68,11 +78,13 @@
     "model": "exercises.exercise",
     "pk": 6,
     "fields": {
-      "name": "Seated Calf Raise",
-      "description": "Sit on a seated calf raise machine with the pads resting on your thighs and the balls of your feet on the platform. Raise your heels by pushing through your toes until fully extended, then slowly lower them back down for a full stretch. Equipment needed: seated calf raise machine or similar setup.",
-      "image": "img/exercises/seated-calf-raise-1.jpg",
+      "name": "T-Bar Row",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/t-bar-row.jpg",
       "workout_type": "gym",
-      "muscle_part": [7],
+      "muscle_part": [
+        2
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -81,11 +93,13 @@
     "model": "exercises.exercise",
     "pk": 7,
     "fields": {
-      "name": "Military Press (AKA Overhead Press)",
-      "description": "Stand with your feet shoulder-width apart and hold a barbell at shoulder level with palms facing forward. Engage your core and press the bar overhead until your arms are fully extended. Lower it back to shoulder height with control. Equipment needed: barbell or dumbbells and optionally a squat rack.",
-      "image": "img/exercises/military-overhead-press.jpg",
+      "name": "Incline Dumbbell Curl",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/incline-dumbbell-curl-thumb.jpg",
       "workout_type": "gym",
-      "muscle_part": [8, 11],
+      "muscle_part": [
+        3
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -94,11 +108,14 @@
     "model": "exercises.exercise",
     "pk": 8,
     "fields": {
-      "name": "One-Arm Seated Overhead Tricep Extension",
-      "description": "Sit on a bench with a dumbbell in one hand. Raise the dumbbell overhead, keeping your upper arm close to your head. Bend your elbow to lower the dumbbell behind your head, then extend your arm to return to the starting position. Keep your core tight and avoid flaring your elbow. Equipment needed: dumbbell and bench.",
-      "image": "img/exercises/one-arm-seated-overhead-tricep-extension.jpg",
+      "name": "Standing Barbell Curl",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/barbell-curl.jpg",
       "workout_type": "gym",
-      "muscle_part": [9],
+      "muscle_part": [
+        3,
+        4
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -107,11 +124,14 @@
     "model": "exercises.exercise",
     "pk": 9,
     "fields": {
-      "name": "One-Arm Cable Tricep Extension",
-      "description": "Attach a single handle to a high pulley cable machine. Stand upright and hold the handle with one hand, keeping your elbow tucked by your side. Extend your arm downward until fully straight, then slowly return to the starting position. Equipment needed: cable machine with a single handle attachment.",
-      "image": "img/exercises/one-arm-cable-tricep-extension.jpg",
+      "name": "Dumbbell Hammer Preacher Curl",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/preacher-dumbbell-hammer-curl.jpg",
       "workout_type": "gym",
-      "muscle_part": [10],
+      "muscle_part": [
+        3,
+        4
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
@@ -120,11 +140,149 @@
     "model": "exercises.exercise",
     "pk": 10,
     "fields": {
+      "name": "Incline Bench Press",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/incline-bench-press.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        5
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 11,
+    "fields": {
+      "name": "Incline Dumbbell Bench Press",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/incline-dumbbell-bench-press_0.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        5
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 12,
+    "fields": {
+      "name": "Hammer Strength Machine Incline Bench Press",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/machine-incline-bench-press.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        5
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 13,
+    "fields": {
+      "name": "Smith Machine Incline Bench Press",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/smith_machine_incline_bench_press.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        5
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 14,
+    "fields": {
+      "name": "Leg Extension",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/leg-extension.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        6
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 15,
+    "fields": {
+      "name": "Seated Calf Raise",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/seated-calf-raise-1.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        7
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 16,
+    "fields": {
+      "name": "Military Press (AKA Overhead Press)",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/military-overhead-press.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        8,
+        11
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 17,
+    "fields": {
+      "name": "One-Arm Seated Overhead Tricep Extension",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/one-arm-seated-overhead-tricep-extension.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        9
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 18,
+    "fields": {
+      "name": "One-Arm Cable Tricep Extension",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
+      "image": "img/exercises/one-arm-cable-tricep-extension.jpg",
+      "workout_type": "gym",
+      "muscle_part": [
+        10
+      ],
+      "created_by": 1,
+      "created_at": "2025-10-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "exercises.exercise",
+    "pk": 19,
+    "fields": {
       "name": "Dumbbell Lateral Raise",
-      "description": "To perform this exercise you must stand upright with a dumbbell in each hand, arms at your sides, and palms facing inward. Keep a slight bend in your elbows and raise your arms out to the sides until they are at shoulder level. Slowly lower the dumbbells back to the starting position. Equipment needed: pair of dumbbells.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.",
       "image": "img/exercises/dumbbell-lateral-raise.jpg",
       "workout_type": "gym",
-      "muscle_part": [11],
+      "muscle_part": [
+        11
+      ],
       "created_by": 1,
       "created_at": "2025-10-21T09:00:00Z"
     }
