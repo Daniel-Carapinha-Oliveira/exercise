@@ -1,5 +1,5 @@
-# Exercise - (**/**/****)
+# Exercise - (25/10/2025)
 
 ## Features
 
-- Implements version 1.0.0 of the app.
+- Implements version 1.0.0.

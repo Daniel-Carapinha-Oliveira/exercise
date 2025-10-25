@@ -1,15 +1,25 @@
 # About this repository
 
-The "exercise" app is a Django-based web application designed to help users explore and manage exercises for their
-workout
-routines. The application provides a user-friendly interface to browse exercises by muscle groups, filter exercises
-based on specific criteria, and view detailed information about each exercise. It also includes various API for
-programmatic access and creation of data.
+The "exercise" app is a Django-based web application that helps users explore exercises for their workout
+routines. It provides a user-friendly interface to browse exercises by muscle group, filter by criteria, and view
+detailed information. The app also provides REST APIs for access and data creation.
 
-This project was built as part of my portfolio to showcase skills in Python (OOP), Django development, Database design,
-REST API design, Docker containerization and frontend development and integration.
+This project demonstrates skills in Python (OOP), Django development, project design, database design, REST API design,
+Docker containerization, and frontend development (html, javascript) and integration. I built a production-ready web
+application fully containerized with Docker and orchestrated using Docker Compose. It connects to a PostgreSQL database
+and is served through Caddy, which handles static file serving, reverse proxying, and HTTPS. The project demonstrates
+expertise in CI/CD practices, including version control (Git/GitHub), containerization (Docker), and automated testing
+frameworks.
 
-The app is currently up at: ...........................................................
+Key production features include:
+
+- Persistent volumes for static, media files, and logging files;
+- Secure non-root user setup, as well as other security features;
+- Service separation for app, database, and web server/reverse proxy;
+- Manage secrets securely.
+- Logging and deployment readiness.
+
+The application is live and accessible at https://thebestexerciseapp.com/. Feel free to explore its features.
 
 ---
 
@@ -28,17 +38,22 @@ The app is currently up at: ....................................................
 
 ## Tech Stack
 
-- **Backend**: Django 5.2.6 (Python)
-- **Frontend**: Bootstrap 5.3.8 for responsive design, combined with JavaScript (OOP) for asynchronous data handling,
-  ensuring a smooth and responsive user experience.
-- **Database**: PostgreSQL.
-- **API**: Django REST Framework (DRF) with OpenAPI documentation via `drf-spectacular`
-- **Testing**: `pytest`, `pytest-django`, and `factory_boy`
-- **Containerization**: Docker for deployment
+The tech stack used for this project is the following:
+
+- **Backend**: Django 5.2.6 with Python (object-oriented programming) for scalable and maintainable server-side logic.
+- **Frontend**: Bootstrap 5.3.8 for responsive UI design, enhanced with JavaScript (OOP) for asynchronous data handling
+  and a smooth, dynamic user experience.
+- **Database**: PostgreSQL for robust relational data storage and efficient querying.
+- **API**: Django REST Framework (DRF) with OpenAPI documentation using drf-spectacular for well-documented,
+  standards-compliant APIs.
+- **Testing**: `pytest`, `pytest-django`, and `factory_boy` for comprehensive unit and integration testing, ensuring
+  reliability and maintainability. Comprehensive test coverage for models, views, serializers, and filters.
+- **Containerization**: Docker and Docker Compose for consistent development, testing, and deployment environments.
+- **version control**: Git and GitHub for source code management, and version tracking.
 
 ---
 
-## Features
+## Web app features
 
 - **Homepage**: A welcoming landing page with links to browse muscle groups and all exercises;
 - **Muscle Groups**: View muscle groups with images and descriptions, and explore exercises associated with each group;
@@ -49,19 +64,15 @@ The app is currently up at: ....................................................
 - **Dynamic Filtering**: Filters that dynamically update based on user selections;
 - **REST API**: Provides endpoints to retrieve and create exercises programmatically;
 - **Admin Panel**: Manage exercises, muscle groups, and related data through Django's admin interface;
-- **Test Suite**: Comprehensive test coverage for models, views, serializers, and filters using `pytest`.
+  https://thebestexerciseapp.com/admin
 
----
-
-## Usage
-
-### Web Interface
+### Interface and Usage
 
 - Homepage: Navigate to the homepage to start exploring.
 - Muscle Groups: Browse muscle groups available to view associated exercises.
-- Exercises: Use the filterable list to find exercises that match your criteria.
+- Exercises: Use the filters available to find exercises that match your criteria.
 - API
-    - Swagger UI: Explore the API documentation at /api/schema/docs/.
+    - Swagger UI: Explore the API documentation at https://thebestexerciseapp.com/api/schema/docs/.
     - To use the APIs the user must authenticate himself. If you want to try them for yourself, contact me at
       "https://www.linkedin.com/in/daniel-carapinha-oliveira" and I'll send you some credentials as soon as I can.
 
@@ -69,26 +80,27 @@ The app is currently up at: ....................................................
 
 ## Main Project Structure
 
-- apps/core: Core utilities, to handle app wide logic.
-- apps/exercises: Main app for managing exercises and related data.
-- static: Static files, including JavaScript and CSS.
-- templates: HTML templates for the frontend.
-- tests: Comprehensive test suite for all components.
+- apps/core – Contains core utilities and services that handle application-wide logic and shared functionality.
+- apps/exercises – Primary app responsible for managing exercises, related data, and associated business logic.
+- static – Stores static assets such as JavaScript, CSS, images, and other frontend resources.
+- templates – Holds HTML templates used to render frontend pages dynamically.
+- tests – Comprehensive test suite covering all components of the project, ensuring correctness and stability.
 
 ---
 
-## Prerequisites
+## Prerequisites to run and deploy the app
 
 1. **To run the development server**
 
-- **Python 3.13.7**
-- **pip** (usually bundled with Python)
-- **virtualenv** or **venv** (highly recommended)
-- **PostgreSQL**
+- **Python 3.13.7**;
+- **pip** (usually bundled with Python);
+- **virtualenv** or **venv** (highly recommended);
+- **PostgreSQL**.
 
-2. **To Deploy:**
+2. **To Deploy with a private domain:**
 
-- **Docker**
+- **Docker**;
+- **A private domain**.
 
 ---
 
@@ -104,10 +116,10 @@ The app is currently up at: ....................................................
         - **Generate new secret key:**
             - Activate your virtual environment, navigate to the project’s root directory, and run the following
               commands:
-            - python manage.py shell
-            - from django.core.management.utils import get_random_secret_key
-            - print(get_random_secret_key())
-            - Copy the secret key and paste it after `SECRET_KEY=`
+                - python manage.py shell
+                - from django.core.management.utils import get_random_secret_key
+                - print(get_random_secret_key())
+                - Copy the secret key and paste it after `SECRET_KEY=`
         - **Set up the rest of the environment variables:**
             - DEBUG: "True" or "False" depending on what you want, but for development is it recommended to leave it at
               "True".
@@ -125,31 +137,37 @@ The app is currently up at: ....................................................
 ### Running the Development Server
 
 1. **Run the development server with python:**
-    - **Install project dependencies (files in requirements folder):**
-        - **Project:**
-            - **pip install -r requirements\base.txt**
-        - **Project and tests:**
-            - **pip install -r requirements\tests.txt**
 
-- python manage.py runserver
-- After running, the project will be available at: http://localhost:8000
+- **Install project dependencies (files in requirements folder):**
+    - **Project:**
+        - **pip install -r requirements\base.txt**
+    - **Project and tests:**
+        - **pip install -r requirements\tests.txt**
+
+- **python manage.py runserver**
+- **After running, the project will be available at:** http://localhost:8000
 
 ### Deploying the app
 
-**To deploy the project with docker:**
+**To deploy the project**
 
-- Go to \env and remove .example from "exercise.env.example" and "exercise_db.env.example".
+- Go to \env and remove .example from "exercise.env.example", "exercise_db.env.example" and "caddy.env.example".
     - Set up the variables inside:
         - exercise.env:
             - SECRET_KEY: A chosen secret key;
-            - ALLOWED_HOSTS....................................................................................
+            - ALLOWED_HOSTS: your domain name;
             - DB_PASSWORD: choose a password for your database.
         - exercise_db.env:
             - POSTGRES_PASSWORD: must be exactly the same as "DB_PASSWORD" in file "exercise.env";
+        - caddy.env:
+          - DOMAIN_NAME= your domain name.
 
 - Use the following command in CMD: **docker-compose build && docker-compose up -d**
-- The app comes preloaded with data via fixtures that get loaded via the docker-compose process, so you can jump right
-  into testing the app. ++++++++++++++++++++++++++++++++++++++FIXTURES NO LONGER AUTO.
+
+- Note: The app comes preloaded with sample data that you can use immediately after deployment. To load the fixtures, 
+simply run the following command in the "exercise" docker container:
+
+**python manage.py loaddata user_fixture.json muscle_group_fixture.json muscle_fixture.json muscle_part_fixture.json exercise_fixture.json**
 
 ---
 
