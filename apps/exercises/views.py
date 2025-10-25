@@ -91,7 +91,7 @@ class Exercises(FilterView):
     model = Exercise
     filterset_class = ExerciseFilter
     template_name = 'exercises.html'
-    paginate_by = 2
+    paginate_by = 5
 
     def get_queryset(self):
         # Start with the filtered queryset from ExerciseFilter
