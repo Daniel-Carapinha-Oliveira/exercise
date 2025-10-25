@@ -27,6 +27,8 @@ class ExerciseSerializer(serializers.ModelSerializer):
     )
 
     created_by = serializers.StringRelatedField(read_only=True)
+    deleted_by = serializers.StringRelatedField(read_only=True)
+    deleted_at = serializers.DateTimeField(read_only=True)
 
     class Meta:
         model = Exercise
