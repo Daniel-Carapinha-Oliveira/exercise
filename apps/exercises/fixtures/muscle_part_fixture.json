@@ -3,7 +3,7 @@
     "model": "exercises.musclepart",
     "pk": 1,
     "fields": {
-      "name": "Lats - Whole muscle",
+      "name": "Whole lats",
       "muscle": 1
     }
   },
@@ -11,7 +11,7 @@
     "model": "exercises.musclepart",
     "pk": 2,
     "fields": {
-      "name": "Trapezius - Whole Trapezius",
+      "name": "Whole trapezius",
       "muscle": 2
     }
   },
@@ -19,7 +19,7 @@
     "model": "exercises.musclepart",
     "pk": 3,
     "fields": {
-      "name": "Biceps - Long head",
+      "name": "Biceps long head",
       "muscle": 3
     }
   },
@@ -27,7 +27,7 @@
     "model": "exercises.musclepart",
     "pk": 4,
     "fields": {
-      "name": "Biceps - Short head",
+      "name": "Biceps short head",
       "muscle": 3
     }
   },
@@ -35,7 +35,7 @@
     "model": "exercises.musclepart",
     "pk": 5,
     "fields": {
-      "name": "Chest - Upper chest",
+      "name": "Upper chest",
       "muscle": 4
     }
   },
@@ -43,7 +43,7 @@
     "model": "exercises.musclepart",
     "pk": 6,
     "fields": {
-      "name": "Quadriceps - whole quadriceps",
+      "name": "Whole quadriceps",
       "muscle": 5
     }
   },
@@ -51,7 +51,7 @@
     "model": "exercises.musclepart",
     "pk": 7,
     "fields": {
-      "name": "Calves - whole calves",
+      "name": "Whole calves",
       "muscle": 6
     }
   },
@@ -59,7 +59,7 @@
     "model": "exercises.musclepart",
     "pk": 8,
     "fields": {
-      "name": "Shoulders - Anterior head",
+      "name": "Shoulders anterior head",
       "muscle": 7
     }
   },
@@ -67,7 +67,7 @@
     "model": "exercises.musclepart",
     "pk": 9,
     "fields": {
-      "name": "Triceps - Long head",
+      "name": "Triceps long head",
       "muscle": 8
     }
   },
@@ -75,7 +75,7 @@
     "model": "exercises.musclepart",
     "pk": 10,
     "fields": {
-      "name": "Triceps - Lateral head",
+      "name": "Triceps lateral head",
       "muscle": 8
     }
   },
@@ -83,7 +83,7 @@
     "model": "exercises.musclepart",
     "pk": 11,
     "fields": {
-      "name": "Shoulders - Lateral head",
+      "name": "Shoulders lateral head",
       "muscle": 7
     }
   }
