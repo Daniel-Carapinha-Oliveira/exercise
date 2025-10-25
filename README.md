@@ -160,14 +160,15 @@ The tech stack used for this project is the following:
         - exercise_db.env:
             - POSTGRES_PASSWORD: must be exactly the same as "DB_PASSWORD" in file "exercise.env";
         - caddy.env:
-          - DOMAIN_NAME= your domain name.
+            - DOMAIN_NAME= your domain name.
 
 - Use the following command in CMD: **docker-compose build && docker-compose up -d**
 
-- Note: The app comes preloaded with sample data that you can use immediately after deployment. To load the fixtures, 
-simply run the following command in the "exercise" docker container:
+- Note: The app comes preloaded with sample data that you can use immediately after deployment. To load the fixtures,
+  simply run the following command in the "exercise" docker container:
 
-**python manage.py loaddata user_fixture.json muscle_group_fixture.json muscle_fixture.json muscle_part_fixture.json exercise_fixture.json**
+**python manage.py loaddata user_fixture.json muscle_group_fixture.json muscle_fixture.json muscle_part_fixture.json
+exercise_fixture.json**
 
 ---
 
@@ -197,3 +198,7 @@ simply run the following command in the "exercise" docker container:
 - Filters: Tests dynamic filtering logic.
 
 ---
+
+# Contacts
+
+- https://www.linkedin.com/in/daniel-carapinha-oliveira;
