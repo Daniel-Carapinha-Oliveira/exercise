@@ -62,9 +62,9 @@ The tech stack used for this project is the following:
 - **Exercise Details**: View detailed information about each exercise, including its name, description, workout type,
   and associated muscle parts;
 - **Dynamic Filtering**: Filters that dynamically update based on user selections;
-- **REST API**: Provides endpoints to retrieve and create exercises programmatically;
-- **Admin Panel**: Manage exercises, muscle groups, and related data through Django's admin interface;
-  https://thebestexerciseapp.com/admin
+- **REST API**: Provides endpoints to retrieve and create exercises;
+- **Admin Panel**: Manage exercises, muscle groups, and related data through Django's admin interface
+  https://thebestexerciseapp.com/admin.
 
 ### Interface and Usage
 
@@ -130,10 +130,6 @@ The tech stack used for this project is the following:
             - DB_PORT: your database port (default 5432)
             - ALLOWED_HOSTS:localhost,127.0.0.1.
 
----
-
-## Running the Development Server or Deploying the app
-
 ### Running the Development Server
 
 1. **Run the development server with python:**
@@ -147,7 +143,9 @@ The tech stack used for this project is the following:
 - **python manage.py runserver**
 - **After running, the project will be available at:** http://localhost:8000
 
-### Deploying the app
+---
+
+## Deploying the app
 
 **To deploy the project**
 
