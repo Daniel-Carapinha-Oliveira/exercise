@@ -115,36 +115,41 @@ class Exercises(FilterView):
     responses=ExerciseSerializer(many=True)
 )
 class ExerciseAPIView(APIView):
-    """
-    API view for retrieving and creating Exercise objects.
-
-    Supports GET and POST HTTP methods and requires authentication.
-
-    Attributes:
-        authentication_classes: Specifies Basic and Session authentication.
-        permission_classes: Requires the user to be authenticated.
-        http_method_names: Restricts allowed HTTP methods to 'get' and 'post'.
-
-    Methods:
-    - get:
-        Retrieves all Exercise objects from the database and returns them
-        serialized as a list of ExerciseSerializer objects in the response.
-
-    - post:
-        Accepts new Exercise data in the request body, validates it using
-        ExerciseSerializer, saves it with the currently authenticated user
-        as 'created_by', and returns the serialized object with HTTP 201 status.
-    """
     authentication_classes = [BasicAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
     http_method_names = ['get', 'post']
 
     def get(self, request):
+        """
+        Part of API view for retrieving and creating Exercise objects.
+
+        Attributes:\n
+            - authentication_classes: Specifies Basic and Session authentication;
+            - permission_classes: Requires the user to be authenticated;
+            - http_method_names: Restricts allowed HTTP methods to 'get' and 'post'.
+
+        get:\n
+            Retrieves all Exercise objects from the database and returns them
+            serialized as a list of ExerciseSerializer objects in the response.
+        """
         exercises = Exercise.objects.all()
         serializer = ExerciseSerializer(exercises, many=True)
         return Response(serializer.data)
 
     def post(self, request):
+        """
+        Part of API view for retrieving and creating Exercise objects.
+
+        Attributes:\n
+            - authentication_classes: Specifies Basic and Session authentication;
+            - permission_classes: Requires the user to be authenticated;
+            - http_method_names: Restricts allowed HTTP methods to 'get' and 'post'.
+
+        post:\n
+            - Accepts new Exercise data in the request body, validates it using
+            ExerciseSerializer, saves it with the currently authenticated user
+            as 'created_by', and returns the serialized object with HTTP 201 status.
+        """
         serializer = ExerciseSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         # save object
